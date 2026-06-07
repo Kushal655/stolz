@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="google-site-verification" content="bn14_R5nNc14zRiSfAJGgM2twCpOyEnswqrWM5groeg" />
+<title>Air Taxi Nepal — Nepal's Cheapest Flights</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0a0f;--sur:#13131a;--bdr:#1e1e2e;--txt:#f0ede8;--muted:#6b6880;--gold:#e8c84a;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;}
+
+/* MARQUEE */
+.mq{background:linear-gradient(90deg,#0d1a0d,#1a2d1a,#0d1a0d);border-bottom:1px solid #1a3a1a;padding:10px 0;overflow:hidden;}
+.mq.hot{background:linear-gradient(90deg,#1a0d00,#2d1800,#1a0d00);border-color:#3a2500;}
+.mq-track{display:flex;animation:mqroll 28s linear infinite;white-space:nowrap;}
+.mq-track span{font-size:12px;letter-spacing:0.14em;color:#5adf8a;padding:0 48px;text-transform:uppercase;}
+.mq.hot .mq-track span{color:#ffd060;}
+@keyframes mqroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* HEADER */
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(10,10,15,0.97);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:400;backdrop-filter:blur(20px);}
+.logo{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,#1a4fa8,#0a2060);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.logo-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;}
+.logo-text b{color:var(--gold);}
+.logo-sub{font-size:9px;color:var(--muted);letter-spacing:0.16em;text-transform:uppercase;}
+.hdr-r{display:flex;gap:10px;align-items:center;}
+.wa{display:inline-flex;align-items:center;gap:7px;background:#128C7E;color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s;}
+.wa:hover{background:#0a6b5e;}
+.ghost{background:none;border:1px solid var(--bdr);color:var(--muted);padding:8px 16px;border-radius:8px;font-size:12px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.ghost:hover{border-color:#3a5faa;color:var(--txt);}
+
+/* HERO */
+.hero{min-height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,#0d1e48,#0a0a0f 70%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,79,168,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(26,79,168,.05) 1px,transparent 1px);background-size:60px 60px;}
+.hero-c{position:relative;z-index:2;max-width:660px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,200,74,.08);border:1px solid rgba(232,200,74,.2);color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:6px 18px;border-radius:20px;margin-bottom:26px;}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,82px);font-weight:700;line-height:1.05;margin-bottom:18px;}
+.hero-h1 span{color:var(--gold);}
+.hero-p{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:34px;font-weight:300;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-blue{background:linear-gradient(135deg,#1a4fa8,#0a2060);color:#fff;padding:14px 30px;border-radius:10px;font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.btn-blue:hover{filter:brightness(1.15);transform:translateY(-1px);}
+
+/* AIRLINES */
+.sec{padding:80px 40px;max-width:1200px;margin:0 auto;}
+.sec-lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:10px;}
+.sec-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:700;text-align:center;margin-bottom:8px;}
+.sec-p{font-size:14px;color:var(--muted);text-align:center;margin-bottom:48px;font-weight:300;}
+.al-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;}
+.ac{border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;position:relative;}
+.ac:hover{transform:translateY(-5px);}
+.ac-buddha{background:linear-gradient(145deg,#06122e,#0d2060,#061232);}
+.ac-buddha:hover{box-shadow:0 20px 60px rgba(26,79,168,.35);}
+.ac-yeti{background:linear-gradient(145deg,#061a0e,#0d4020,#041008);}
+.ac-yeti:hover{box-shadow:0 20px 60px rgba(26,110,53,.35);}
+.ac-shree{background:linear-gradient(145deg,#1e0505,#500a0a,#100202);}
+.ac-shree:hover{box-shadow:0 20px 60px rgba(158,21,21,.35);}
+.ac-extra{background:linear-gradient(145deg,#141420,#1e1e35,#0a0a18);}
+.ac-body{padding:32px 26px;}
+.ac-top{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+.ac-ico{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:22px;border:1px solid rgba(255,255,255,.1);}
+.ac-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;}
+.ac-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;}
+.ac-hr{height:1px;background:rgba(255,255,255,.07);margin-bottom:16px;}
+.ac-route{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.ac-city{font-size:14px;font-weight:600;color:#fff;}
+.ac-plane{font-size:14px;animation:pm 2s ease-in-out infinite;}
+@keyframes pm{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.ac-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:20px;font-weight:300;}
+.ac-btn{width:100%;padding:12px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;color:#fff;font-family:'Inter',sans-serif;transition:all .2s;}
+.ac-btn:hover{filter:brightness(1.15);}
+.btn-buddha{background:linear-gradient(135deg,#1a4fa8,#0a2060);}
+.btn-yeti{background:linear-gradient(135deg,#1a6e35,#0d3a1a);}
+.btn-shree{background:linear-gradient(135deg,#9e1515,#5a0808);}
+.btn-extra{background:linear-gradient(135deg,#3a3a6a,#1a1a3a);}
+.ac-badge{position:absolute;top:13px;right:13px;background:rgba(232,200,74,.1);border:1px solid rgba(232,200,74,.28);color:var(--gold);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:10px;}
+
+/* REVIEWS */
+.rv-sec{padding:80px 40px;max-width:1200px;margin:0 auto;}
+.rv-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.rv-panel{background:var(--sur);border:1px solid var(--bdr);border-radius:16px;padding:30px;}
+.rv-panel h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:6px;}
+.rv-panel p{font-size:13px;color:var(--muted);margin-bottom:20px;font-weight:300;}
+.fl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.fi{width:100%;background:#1a1a28;border:1px solid var(--bdr);color:var(--txt);padding:11px 14px;border-radius:8px;font-size:13px;font-family:'Inter',sans-serif;outline:none;resize:none;-webkit-appearance:none;appearance:none;transition:border-color .2s;}
+.fi:focus{border-color:#3a5faa;}
+.fi::placeholder{color:var(--muted);}
+.fg{margin-bottom:13px;}
+.btn-green{background:linear-gradient(135deg,#128C7E,#075E54);color:#fff;border:none;padding:12px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;width:100%;font-family:'Inter',sans-serif;transition:all .2s;}
+.btn-green:hover{filter:brightness(1.1);}
+.rv-list{max-height:420px;overflow-y:auto;}
+.rvi{background:#0f0f18;border:1px solid var(--bdr);border-radius:10px;padding:14px;margin-bottom:10px;}
+.rvh{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.rvav{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1a4fa8,#4a1a8a);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
+.rvnm{font-size:13px;font-weight:500;}
+.rvst{font-size:11px;color:var(--gold);}
+.rvtm{font-size:11px;color:var(--muted);margin-left:auto;}
+.rvbd{font-size:13px;color:rgba(240,237,230,.75);line-height:1.6;font-weight:300;}
+.rv-rpl{margin-top:8px;background:rgba(26,79,168,.08);border-left:2px solid #1a4fa8;padding:7px 10px;border-radius:0 6px 6px 0;}
+.rv-rpl-lbl{font-size:10px;color:#7ab0f0;font-weight:600;margin-bottom:2px;}
+.rv-rpl-txt{font-size:12px;color:rgba(240,237,230,.7);}
+.no-rv{font-size:13px;color:var(--muted);text-align:center;padding:28px 0;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--bdr);padding:48px 40px;text-align:center;}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:8px;}
+.ft-logo b{color:var(--gold);}
+.ft-sub{font-size:12px;color:var(--muted);margin-bottom:14px;}
+.ft-copy{font-size:11px;color:#222232;margin-top:14px;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:#13131a;border:1px solid var(--bdr);border-radius:10px;padding:12px 24px;font-size:13px;z-index:9999;transition:transform .3s;white-space:nowrap;box-shadow:0 8px 40px rgba(0,0,0,.6);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.toast.ok{border-color:rgba(74,222,128,.35);color:#4ade80;}
+.toast.bad{border-color:rgba(224,85,85,.35);color:#e05555;}
+
+/* LOADER */
+.ldr{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:900;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.ldr.on{display:flex;}
+.ldr-box{background:#13131a;border:1px solid var(--bdr);border-radius:12px;padding:28px 40px;text-align:center;}
+.spin{display:block;width:28px;height:28px;border:3px solid rgba(255,255,255,.15);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 12px;}
+@keyframes sp{to{transform:rotate(360deg)}}
+.ldr-box p{font-size:13px;color:var(--muted);}
+
+/* MODAL */
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.87);z-index:1000;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;backdrop-filter:blur(8px);}
+.mo.on{display:flex;}
+.mo-box{background:#0f0f18;border:1px solid var(--bdr);border-radius:20px;width:100%;max-width:520px;position:relative;animation:moin .22s ease;margin:auto;}
+@keyframes moin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.mo-hd{padding:26px 28px 0;display:flex;align-items:center;justify-content:space-between;}
+.mo-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;}
+.mo-x{background:none;border:1px solid var(--bdr);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:16px;transition:all .2s;}
+.mo-x:hover{border-color:#4a4a6a;color:var(--txt);}
+.mo-body{padding:22px 28px 28px;}
+.step{display:none;}
+.step.on{display:block;}
+.steps-ind{display:flex;gap:6px;margin-bottom:22px;}
+.sdot{width:8px;height:8px;border-radius:50%;background:var(--bdr);transition:all .2s;}
+.sdot.on{background:var(--gold);width:22px;border-radius:4px;}
+.sdot.done{background:#4ade80;}
+.snav{display:flex;gap:10px;margin-top:20px;}
+.btn-next{flex:1;background:linear-gradient(135deg,#1a4fa8,#0a2060);color:#fff;border:none;padding:13px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.btn-next:hover{filter:brightness(1.1);}
+.btn-next.gr{background:linear-gradient(135deg,#128C7E,#075E54);}
+.btn-bk{background:none;border:1px solid var(--bdr);color:var(--muted);padding:13px 18px;border-radius:8px;font-size:14px;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.btn-bk:hover{border-color:#4a4a6a;color:var(--txt);}
+
+/* CALENDAR */
+.cal{background:#13131a;border:1px solid var(--bdr);border-radius:12px;padding:18px;}
+.cal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.cal-nav{background:none;border:1px solid var(--bdr);color:var(--txt);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:14px;transition:border-color .2s;}
+.cal-nav:hover{border-color:#3a5faa;}
+.cal-mn{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;}
+.cal-dn{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:4px;}
+.cdn{text-align:center;font-size:10px;color:var(--muted);padding:3px 0;}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+.cd{height:36px;display:flex;align-items:center;justify-content:center;border-radius:6px;font-size:12px;cursor:pointer;transition:all .15s;color:var(--txt);}
+.cd:hover:not(.emp):not(.pst){background:#1a1a2e;}
+.cd.emp,.cd.pst{color:#252535;cursor:not-allowed;}
+.cd.sel{background:linear-gradient(135deg,#1a4fa8,#0a2060);color:#fff;font-weight:600;}
+.cd.tod{border:1px solid #3a5faa;color:#7ab0f0;}
+.time-slot{background:#1a1a28;border:1px solid var(--bdr);color:var(--txt);padding:10px 16px;border-radius:8px;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;}
+.time-slot:hover{border-color:#3a5faa;background:#1a1a38;}
+.time-slot.sel{background:linear-gradient(135deg,#1a4fa8,#0a2060);border-color:#1a4fa8;color:#fff;font-weight:600;}
+.time-slot.full{background:#1a0808;border-color:#3a1515;color:#6b3535;cursor:not-allowed;}
+.promo-card{background:#0f0f18;border:1px solid var(--bdr);border-radius:10px;padding:16px;margin-bottom:10px;}
+.promo-card-hd{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:10px;}
+.promo-nm{font-size:15px;font-weight:600;}
+.promo-code-badge{background:rgba(232,200,74,0.1);border:1px solid rgba(232,200,74,0.3);color:var(--gold);font-size:13px;font-weight:700;padding:4px 14px;border-radius:8px;letter-spacing:0.1em;}
+.promo-meta{font-size:12px;color:var(--muted);line-height:1.9;}
+.promo-uses{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:8px;padding:10px 14px;margin-top:10px;}
+.promo-uses-title{font-size:11px;color:#4ade80;font-weight:600;margin-bottom:6px;letter-spacing:0.08em;text-transform:uppercase;}
+.promo-use-item{font-size:12px;color:var(--muted);padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+
+/* PAYMENT */
+.pm-item{background:#13131a;border:1px solid var(--bdr);border-radius:10px;padding:13px 16px;margin-bottom:10px;}
+.pm-nm{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:4px;}
+.pm-dt{font-size:12px;color:var(--muted);line-height:1.7;}
+.pm-qr{max-width:160px;border-radius:8px;margin-top:10px;border:1px solid var(--bdr);}
+.no-pm{font-size:13px;color:var(--muted);padding:12px 0;}
+
+/* SUMMARY */
+.sumbox{background:#13131a;border:1px solid var(--bdr);border-radius:10px;padding:13px 16px;margin-bottom:16px;font-size:13px;color:var(--muted);line-height:2;}
+.sumbox b{color:var(--txt);}
+
+/* SUCCESS */
+.succ{text-align:center;padding:14px 0;}
+.succ-icon{font-size:54px;margin-bottom:12px;animation:pop .4s ease;}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.succ h2{font-family:'Cormorant Garamond',serif;font-size:28px;color:#4ade80;margin-bottom:10px;}
+.succ p{font-size:14px;color:var(--muted);line-height:1.7;}
+
+/* ADMIN */
+#adm{display:none;position:fixed;inset:0;background:#08080f;z-index:3000;overflow-y:auto;}
+.adm-hd{background:#0f0f18;border-bottom:1px solid var(--bdr);padding:14px 30px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+.adm-logo{font-family:'Cormorant Garamond',serif;font-size:18px;}
+.adm-logo b{color:var(--gold);}
+.adm-body{padding:24px 30px;max-width:1100px;margin:0 auto;}
+.adm-tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+.atab{background:var(--sur);border:1px solid var(--bdr);color:var(--muted);padding:9px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-family:'Inter',sans-serif;transition:all .2s;}
+.atab.on{background:#1a4fa8;border-color:#1a4fa8;color:#fff;}
+.asec{display:none;}
+.asec.on{display:block;}
+.acard{background:var(--sur);border:1px solid var(--bdr);border-radius:12px;padding:20px;margin-bottom:14px;}
+.acard-t{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:14px;}
+.af{margin-bottom:11px;}
+.afl{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.ai{width:100%;background:#1a1a28;border:1px solid var(--bdr);color:var(--txt);padding:10px 13px;border-radius:7px;font-size:13px;font-family:'Inter',sans-serif;outline:none;-webkit-appearance:none;appearance:none;}
+.ai:focus{border-color:#3a5faa;}
+.abtn{background:linear-gradient(135deg,#1a4fa8,#0a2060);color:#fff;border:none;padding:10px 18px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;}
+.abtn:hover{filter:brightness(1.1);}
+.abtn.rd{background:linear-gradient(135deg,#9e1515,#5a0808);}
+.abtn.sm{font-size:11px;padding:6px 12px;}
+.bk-card{background:#0f0f18;border:1px solid var(--bdr);border-radius:10px;padding:16px;margin-bottom:11px;}
+.bk-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.bk-nm{font-size:15px;font-weight:600;}
+.bk-rt{font-size:13px;color:var(--gold);}
+.bk-mt{font-size:12px;color:var(--muted);line-height:1.9;margin-bottom:8px;}
+.bk-st{font-size:10px;padding:3px 11px;border-radius:10px;font-weight:500;}
+.st-new{background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.25);color:#fde047;}
+.st-confirmed{background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);color:#4ade80;}
+.st-rejected{background:rgba(224,85,85,.1);border:1px solid rgba(224,85,85,.25);color:#e05555;}
+.bk-acts{display:flex;gap:7px;flex-wrap:wrap;}
+.bk-acts button{padding:7px 13px;border-radius:6px;border:none;cursor:pointer;font-size:11px;font-family:'Inter',sans-serif;}
+.bc{background:#064e3b;color:#6ee7b7;}
+.br{background:#7f1d1d;color:#fca5a5;}
+.bd{background:#1a1a28;border:1px solid var(--bdr)!important;color:var(--muted);}
+.rt-tag{display:inline-flex;align-items:center;gap:5px;background:#1a1a28;border:1px solid var(--bdr);border-radius:6px;padding:5px 10px;font-size:12px;margin:3px;}
+.rt-tag button{background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;line-height:1;padding:0;}
+.rt-tag button:hover{color:#e05555;}
+.ar-row{display:flex;gap:8px;margin-top:9px;}
+.ar-row input{flex:1;background:#1a1a28;border:1px solid var(--bdr);color:var(--txt);padding:8px 12px;border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;outline:none;}
+.rpl-row{display:flex;gap:8px;margin-top:8px;}
+.rpl-row input{flex:1;background:#1a1a28;border:1px solid var(--bdr);color:var(--txt);padding:8px 12px;border-radius:6px;font-size:12px;font-family:'Inter',sans-serif;outline:none;}
+.rpl-row button{background:#1a4fa8;border:none;color:#fff;padding:8px 13px;border-radius:6px;cursor:pointer;font-size:12px;font-family:'Inter',sans-serif;}
+.saved-ok{font-size:12px;color:#4ade80;margin-top:7px;display:none;}
+.al-mgmt{background:#0f0f18;border:1px solid var(--bdr);border-radius:12px;padding:16px;margin-bottom:12px;}
+.al-mgmt-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px;}
+.al-mgmt-nm{font-size:15px;font-weight:600;}
+.lerr{display:none;color:#e05555;font-size:13px;text-align:center;margin-bottom:10px;}
+
+@media(max-width:768px){
+  header{padding:12px 18px;}
+  .sec,.rv-sec{padding:60px 18px;}
+  footer{padding:40px 18px;}
+  .rv-grid{grid-template-columns:1fr;}
+  .adm-body{padding:14px;}
+  .mo-body,.mo-hd{padding-left:18px;padding-right:18px;}
+  .al-grid{grid-template-columns:1fr;}
+}
+</style>
+<!-- Firebase Compat SDK -->
+<!-- Firebase SDKs - use these exact URLs when hosting on your server -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<div class="ldr" id="ldr"><div class="ldr-box"><div class="spin"></div><p id="ldr-txt">Loading...</p></div></div>
+<div class="toast" id="toast"></div>
+
+<!-- MARQUEE -->
+<div class="mq" id="mq">
+  <div class="mq-track" id="mq-track">
+    <span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span>
+    <span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span>
+    <span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span>
+    <span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo" id="go-top">
+    <div class="logo-mark">✈</div>
+    <div><div class="logo-text">Air Taxi <b>Nepal</b></div><div class="logo-sub">Nepal's Cheapest Flights</div></div>
+  </div>
+  <div class="hdr-r">
+    <a href="https://wa.me/9779713601159" target="_blank" class="wa">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Support 24/7
+    </a>
+    <button class="ghost" onclick="openInfoPage('about')">About</button>
+    <button class="ghost" onclick="openInfoPage('privacy')">Privacy</button>
+    <button class="ghost" id="admin-btn">Admin</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-c">
+    <div class="hero-badge">🇳🇵 Domestic Flights · Best Price Guaranteed</div>
+    <h1 class="hero-h1">Fly Anywhere<br>in <span>Nepal</span></h1>
+    <p class="hero-p">Book seats on Buddha Air, Yeti Airlines & Shree Airlines at the cheapest prices. Fast, easy, reliable.</p>
+    <div class="hero-btns">
+      <button class="btn-blue" id="hero-book">✈ Book a Flight</button>
+      <a href="https://wa.me/9779713601159" target="_blank" class="wa">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- AIRLINES -->
+<div class="sec" id="al-sec">
+  <div class="sec-lbl">Choose Your Airline</div>
+  <h2 class="sec-h2">Fly with Nepal's Best</h2>
+  <p class="sec-p">Select an airline to search routes and book at the cheapest price.</p>
+  <div class="al-grid" id="al-grid"></div>
+</div>
+
+<!-- REVIEWS -->
+<div class="rv-sec">
+  <div class="sec-lbl" style="text-align:center">Community</div>
+  <h2 class="sec-h2" style="text-align:center;margin-bottom:8px">Traveller Reviews</h2>
+  <p class="sec-p" style="text-align:center;margin-bottom:34px">Share your experience and help others travel smarter.</p>
+  <div class="rv-grid">
+    <div class="rv-panel">
+      <h3>Leave a Review</h3>
+      <p>Your feedback helps other travellers choose confidently.</p>
+      <div class="fg"><div class="fl">Your Name</div><input class="fi" id="rv-name" placeholder="Full name"/></div>
+      <div class="fg"><div class="fl">Rating</div>
+        <select class="fi" id="rv-stars">
+          <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+          <option value="4">⭐⭐⭐⭐ Good</option>
+          <option value="3">⭐⭐⭐ Average</option>
+          <option value="2">⭐⭐ Poor</option>
+          <option value="1">⭐ Terrible</option>
+        </select>
+      </div>
+      <div class="fg"><div class="fl">Your Review</div><textarea class="fi" id="rv-body" rows="4" placeholder="Share your experience..."></textarea></div>
+      <button class="btn-green" id="rv-btn">Submit Review ✈</button>
+    </div>
+    <div class="rv-panel">
+      <h3>What People Say</h3>
+      <p>Real experiences from our customers across Nepal.</p>
+      <div class="rv-list" id="pub-rv"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-logo">Air Taxi <b>Nepal</b></div>
+  <div class="ft-sub">Nepal's Cheapest Flights · Buddha Air · Yeti Airlines · Shree Airlines</div>
+  <a href="https://wa.me/9779713601159" target="_blank" class="wa" style="display:inline-flex;margin-top:10px">📱 +977 9713601159 · Support 24/7</a>
+  <div style="margin-top:14px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap"><button onclick="openInfoPage('about')" style="background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;font-family:Inter,sans-serif">About</button><button onclick="openInfoPage('privacy')" style="background:none;border:none;color:var(--muted);font-size:12px;cursor:pointer;font-family:Inter,sans-serif">Privacy Policy</button></div>
+  <p class="ft-copy">© 2025 Air Taxi Nepal. All rights reserved.</p>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="mo" id="bk-mo">
+  <div class="mo-box">
+    <div class="mo-hd">
+      <div class="mo-title" id="bk-title">Book Your Flight</div>
+      <button class="mo-x" id="bk-x">✕</button>
+    </div>
+    <div class="mo-body">
+      <div class="steps-ind" id="steps-ind"></div>
+      <!-- Step 1 -->
+      <div class="step on" id="s1">
+        <div class="fg"><div class="fl">From</div><select class="fi" id="bk-from"><option value="">Select origin</option></select></div>
+        <div class="fg"><div class="fl">To</div><select class="fi" id="bk-to"><option value="">Select destination</option></select></div>
+        <div class="snav"><button class="btn-next" id="s1n">Choose Date →</button></div>
+      </div>
+      <!-- Step 2 -->
+      <div class="step" id="s2">
+        <div class="fl" style="margin-bottom:10px">Select Travel Date</div>
+        <div class="cal">
+          <div class="cal-hd">
+            <button class="cal-nav" id="cal-p">‹</button>
+            <div class="cal-mn" id="cal-lbl"></div>
+            <button class="cal-nav" id="cal-n">›</button>
+          </div>
+          <div class="cal-dn"><div class="cdn">Su</div><div class="cdn">Mo</div><div class="cdn">Tu</div><div class="cdn">We</div><div class="cdn">Th</div><div class="cdn">Fr</div><div class="cdn">Sa</div></div>
+          <div class="cal-days" id="cal-days"></div>
+        </div>
+        <p id="date-lbl" style="font-size:13px;color:var(--gold);margin-top:10px;min-height:18px"></p>
+        <div id="time-slots-wrap" style="display:none;margin-top:16px">
+          <div class="fl" style="margin-bottom:10px">Select Departure Time</div>
+          <div id="time-slots-grid" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+          <p id="time-lbl" style="font-size:13px;color:var(--gold);margin-top:10px;min-height:18px"></p>
+        </div>
+        <div class="snav"><button class="btn-bk" id="s2b">← Back</button><button class="btn-next" id="s2n">Passenger Details →</button></div>
+      </div>
+      <!-- Step 3 -->
+      <div class="step" id="s3">
+        <div class="fg"><div class="fl">Full Name *</div><input class="fi" id="bk-name" placeholder="Your full name"/></div>
+        <div class="fg"><div class="fl">Age *</div><input class="fi" type="number" id="bk-age" placeholder="Your age" min="1" max="120"/></div>
+        <div class="fg"><div class="fl">Number of Tickets *</div><input class="fi" type="number" id="bk-tickets" placeholder="1" min="1" max="9" value="1"/></div>
+        <div class="fg"><div class="fl">Email (to receive ticket) *</div><input class="fi" type="email" id="bk-email" placeholder="you@email.com"/></div>
+        <div class="snav"><button class="btn-bk" id="s3b">← Back</button><button class="btn-next" id="s3n">Payment Info →</button></div>
+      </div>
+      <!-- Step 4: Price -->
+      <div class="step" id="s4">
+        <div class="sumbox" id="bk-sum4"></div>
+        <div id="price-display" style="margin:16px 0"></div>
+        <div style="background:rgba(232,200,74,0.05);border:1px solid rgba(232,200,74,0.25);border-radius:12px;padding:16px;margin-bottom:16px">
+          <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:10px">🎟 Have a Promo Code? <span style="font-size:11px;font-weight:400;color:var(--muted)">Optional — get a discount</span></div>
+          <div style="display:flex;gap:8px">
+            <input class="fi" id="promo-input" placeholder="Enter promo code e.g. RAMESH10" style="text-transform:uppercase;flex:1;letter-spacing:0.08em"/>
+            <button style="background:linear-gradient(135deg,#7a5a00,#3d2d00);color:var(--gold);border:1px solid rgba(232,200,74,0.3);padding:0 18px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:Inter,sans-serif" id="promo-apply-btn">Apply</button>
+          </div>
+          <div id="promo-result" style="font-size:13px;margin-top:10px;min-height:18px"></div>
+        </div>
+        <div class="snav"><button class="btn-bk" id="s4b">← Back</button><button class="btn-next gr" id="s4n">See Bill →</button></div>
+      </div>
+
+      <!-- Step 5: BILL / Discount Summary -->
+      <div class="step" id="s5">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:18px;text-align:center">🧾 Your Flight Bill</div>
+        <div id="bill-display"></div>
+        <div class="snav"><button class="btn-bk" id="s5b">← Back</button><button class="btn-next gr" id="s5n">Proceed to Payment →</button></div>
+      </div>
+
+      <!-- Step 6: Payment -->
+      <div class="step" id="s6">
+        <div class="sumbox" id="bk-sum"></div>
+        <div class="fl" style="margin-bottom:10px">Payment Options</div>
+        <div id="pm-disp"></div>
+        <div class="fg" style="margin-top:14px"><div class="fl">Phone Used for Payment *</div><input class="fi" id="bk-pp" placeholder="+977 XXXXXXXXXX"/></div>
+        <div class="fg"><div class="fl">Name Used for Payment *</div><input class="fi" id="bk-pn" placeholder="Name on payment"/></div>
+        <div class="snav"><button class="btn-bk" id="s6b">← Back</button><button class="btn-next gr" id="s6n">Confirm Booking ✓</button></div>
+      </div>
+
+      <!-- Step 7: Done -->
+      <div class="step" id="s7">
+        <div class="succ">
+          <div class="succ-icon">🎉</div>
+          <h2>Booking Submitted!</h2>
+          <p>Your booking is received. You'll get ticket details at your email. Our team will contact you to confirm.</p>
+          <button class="btn-next" id="s7d" style="margin-top:20px">Done ✓</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="mo" id="login-mo">
+  <div class="mo-box" style="max-width:370px">
+    <div class="mo-hd"><div class="mo-title">🔐 Admin Login</div><button class="mo-x" id="login-x">✕</button></div>
+    <div class="mo-body">
+      <div class="lerr" id="lerr">Invalid email or password.</div>
+      <div class="fg"><div class="fl">Email</div><input class="fi" type="email" id="l-em" placeholder="admin@email.com"/></div>
+      <div class="fg"><div class="fl">Password</div><input class="fi" type="password" id="l-pw" placeholder="Password"/></div>
+      <button class="btn-next" id="login-btn" style="width:100%;margin-top:4px">Login →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adm">
+  <div class="adm-hd">
+    <div class="adm-logo">Air Taxi <b>Nepal</b> — Admin</div>
+    <button class="ghost" id="adm-logout">Logout</button>
+  </div>
+  <div class="adm-body">
+    <div class="adm-tabs">
+      <button class="atab on" data-sec="bookings">✈ Bookings</button>
+      <button class="atab" data-sec="updates">📢 Updates</button>
+      <button class="atab" data-sec="reviews">⭐ Reviews</button>
+      <button class="atab" data-sec="payment">💳 Payment</button>
+      <button class="atab" data-sec="routes">🗺 Routes</button>
+      <button class="atab" data-sec="prices">💰 Route Prices</button>
+      <button class="atab" data-sec="times">⏰ Flight Times</button>
+      <button class="atab" data-sec="promo">🎟 Promo Codes</button>
+    </div>
+    <!-- BOOKINGS -->
+    <div class="asec on" id="asec-bookings"><div id="adm-bk"></div></div>
+    <!-- UPDATES -->
+    <div class="asec" id="asec-updates">
+      <div class="acard">
+        <div class="acard-t">Marquee Announcement</div>
+        <div id="cur-upd" style="background:#13131a;border:1px solid var(--bdr);border-radius:8px;padding:12px;margin-bottom:14px;font-size:13px;color:var(--muted)">No active custom message.</div>
+        <div class="af"><div class="afl">New Message</div><input class="ai" id="upd-msg" placeholder="Type your announcement..."/></div>
+        <div style="display:flex;gap:10px;margin-top:11px">
+          <button class="abtn" id="upd-pub">📢 Publish (24h)</button>
+          <button class="abtn rd" id="upd-clr">🗑 Clear</button>
+        </div>
+      </div>
+    </div>
+    <!-- REVIEWS -->
+    <div class="asec" id="asec-reviews"><div id="adm-rv"></div></div>
+    <!-- PAYMENT -->
+    <div class="asec" id="asec-payment">
+      <div class="acard">
+        <div class="acard-t">💚 eSewa</div>
+        <div class="af"><div class="afl">eSewa Number</div><input class="ai" id="es-num" placeholder="9813XXXXXX"/></div>
+        <div class="af"><div class="afl">Account Name</div><input class="ai" id="es-nm" placeholder="Name"/></div>
+        <div class="af"><div class="afl">QR Code URL (optional)</div><input class="ai" id="es-qr" placeholder="https://..."/></div>
+        <button class="abtn" id="es-save" style="margin-top:4px">Save eSewa</button>
+        <div class="saved-ok" id="es-ok">✅ Saved!</div>
+      </div>
+      <div class="acard">
+        <div class="acard-t">💜 Khalti</div>
+        <div class="af"><div class="afl">Khalti Number</div><input class="ai" id="kh-num" placeholder="9813XXXXXX"/></div>
+        <div class="af"><div class="afl">Account Name</div><input class="ai" id="kh-nm" placeholder="Name"/></div>
+        <div class="af"><div class="afl">QR Code URL (optional)</div><input class="ai" id="kh-qr" placeholder="https://..."/></div>
+        <button class="abtn" id="kh-save" style="margin-top:4px">Save Khalti</button>
+        <div class="saved-ok" id="kh-ok">✅ Saved!</div>
+      </div>
+      <div class="acard">
+        <div class="acard-t">🏦 Bank Transfer</div>
+        <div class="af"><div class="afl">Bank Name</div><input class="ai" id="bk-bnk" placeholder="e.g. Nepal Bank Limited"/></div>
+        <div class="af"><div class="afl">Account Number</div><input class="ai" id="bk-acc" placeholder="Account number"/></div>
+        <div class="af"><div class="afl">Account Holder</div><input class="ai" id="bk-hldr" placeholder="Name"/></div>
+        <div class="af"><div class="afl">QR Code URL (optional)</div><input class="ai" id="bk-bqr" placeholder="https://..."/></div>
+        <button class="abtn" id="bk-save" style="margin-top:4px">Save Bank</button>
+        <div class="saved-ok" id="bk-ok">✅ Saved!</div>
+      </div>
+    </div>
+    <!-- ROUTE PRICES -->
+    <div class="asec" id="asec-prices">
+      <div class="acard" style="margin-bottom:16px">
+        <div class="acard-t">💰 Set Price Per Route</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Select airline and route, then set price in NPR. You can also mark a route as "No Flight Available".</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:12px">
+          <div style="flex:1;min-width:140px"><div class="afl">Airline</div>
+            <select class="ai" id="pr-airline"><option value="">Select airline</option></select>
+          </div>
+          <div style="flex:1;min-width:140px"><div class="afl">Route (From → To)</div>
+            <select class="ai" id="pr-route"><option value="">Select route</option></select>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+          <div style="flex:1;min-width:140px"><div class="afl">Price (NPR)</div><input class="ai" id="pr-price" type="number" placeholder="e.g. 4500"/></div>
+          <div style="display:flex;align-items:center;gap:8px;padding-bottom:2px">
+            <input type="checkbox" id="pr-noflight" style="width:16px;height:16px;cursor:pointer;accent-color:#e05555"/>
+            <label for="pr-noflight" style="font-size:13px;color:var(--muted);cursor:pointer">No Flight Available</label>
+          </div>
+          <button class="abtn" id="pr-save-btn">Save Price</button>
+        </div>
+        <div class="saved-ok" id="pr-ok" style="margin-top:8px">✅ Price saved!</div>
+      </div>
+      <div id="adm-prices-list"></div>
+    </div>
+    <!-- ROUTES -->
+    <div class="asec" id="asec-routes">
+      <div class="acard" style="margin-bottom:18px">
+        <div class="acard-t">Add New Airline</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end">
+          <div style="flex:1;min-width:130px"><div class="afl">Airline Name</div><input class="ai" id="new-nm" placeholder="e.g. Simrik Air"/></div>
+          <div style="flex:1;min-width:110px"><div class="afl">Brand Color</div><input class="ai" id="new-col" placeholder="#1a4fa8"/></div>
+          <div style="width:65px"><div class="afl">Icon</div><input class="ai" id="new-ico" placeholder="✈"/></div>
+          <button class="abtn" id="add-al">+ Add</button>
+        </div>
+      </div>
+      <div id="adm-rt"></div>
+    </div>
+
+    <!-- PROMO CODES -->
+    <div class="asec" id="asec-promo">
+      <div class="acard" style="margin-bottom:16px">
+        <div class="acard-t">🎟 Add New Affiliate & Promo Code</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+          <div class="af"><div class="afl">Affiliate Name</div><input class="ai" id="pc-name" placeholder="e.g. Ramesh Sharma"/></div>
+          <div class="af"><div class="afl">Age</div><input class="ai" type="number" id="pc-age" placeholder="e.g. 25"/></div>
+        </div>
+        <div class="af"><div class="afl">Social Media Link</div><input class="ai" id="pc-social" placeholder="e.g. https://instagram.com/ramesh"/></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px">
+          <div class="af"><div class="afl">Promo Code</div><input class="ai" id="pc-code" placeholder="e.g. RAMESH10" style="text-transform:uppercase"/></div>
+          <div class="af"><div class="afl">Discount %</div><input class="ai" type="number" id="pc-discount" placeholder="5" value="5" min="1" max="100"/></div>
+        </div>
+        <button class="abtn" id="pc-add-btn" style="margin-top:12px">+ Add Promo Code</button>
+        <div class="saved-ok" id="pc-ok" style="margin-top:8px">✅ Promo code added!</div>
+      </div>
+      <div id="promo-list"></div>
+    </div>
+    <!-- FLIGHT TIMES -->
+    <div class="asec" id="asec-times">
+      <div class="acard">
+        <div class="acard-t">⏰ Set Flight Times Per Route</div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Select airline and route, enter real departure times separated by commas. Customers will see these times when booking.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px">
+          <div style="flex:1;min-width:140px"><div class="afl">Airline</div><select class="ai" id="ft-airline"><option value="">Select airline</option></select></div>
+          <div style="flex:1;min-width:180px"><div class="afl">Route (From → To)</div><select class="ai" id="ft-route"><option value="">Select route</option></select></div>
+        </div>
+        <div class="af"><div class="afl">Departure Times (comma separated)</div>
+          <input class="ai" id="ft-times" placeholder="e.g. 07:15 AM, 10:30 AM, 02:00 PM, 05:45 PM"/>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin:8px 0 12px">Enter exact times from the airline website. Example: <b style="color:var(--txt)">07:15 AM, 12:30 PM, 04:45 PM</b></p>
+        <button class="abtn" id="ft-save" style="margin-top:4px">💾 Save Times</button>
+        <div class="saved-ok" id="ft-ok" style="margin-top:8px">✅ Times saved! Customers can now see these times.</div>
+      </div>
+      <div id="ft-saved-list" style="margin-top:16px"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Firebase v9 compat - works as regular script tags, no modules needed -->
+<script>
+// ===== FIREBASE INIT =====
+const firebaseConfig = {
+  apiKey: "AIzaSyCzDMnWsYkaOqvRncgsqBlAlErIhq9U53w",
+  authDomain: "air-taxi-nepal.firebaseapp.com",
+  projectId: "air-taxi-nepal",
+  storageBucket: "air-taxi-nepal.firebasestorage.app",
+  messagingSenderId: "977525178796",
+  appId: "1:977525178796:web:f32269c3a97c046d263a09"
+};
+if(typeof firebase === 'undefined'){
+  console.error('Firebase failed to load. Check your internet connection.');
+} else {
+  firebase.initializeApp(firebaseConfig);
+}
+const db = (typeof firebase !== 'undefined') ? firebase.firestore() : null;
+
+// Firebase compat API wrappers to match modular API calls used in the rest of the code
+const getDoc = (ref) => ref.get();
+const getDocs = (ref) => ref.get();
+const setDoc = (ref, data) => ref.set(data);
+const addDoc = (ref, data) => ref.add(data);
+const updateDoc = (ref, data) => ref.update(data);
+const deleteDoc = (ref) => ref.delete();
+const collection = (db, name) => db.collection(name);
+const doc = (dbOrRef, colOrId, docId) => {
+  // doc(db, 'collection', 'docId')
+  if(docId !== undefined) return dbOrRef.collection(colOrId).doc(docId);
+  // doc(db, 'collection') - just return collection ref (rare)
+  return dbOrRef.collection(colOrId);
+};
+const query = (ref, ...constraints) => {
+  let q = ref;
+  constraints.forEach(c => { if(c && c._apply) q = c._apply(q); });
+  return q;
+};
+const orderBy = (field, dir='asc') => ({ _apply: (q) => q.orderBy(field, dir) });
+
+
+
+// ===== HELPERS =====
+const MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function esc(s){const d=document.createElement('div');d.textContent=s||'';return d.innerHTML;}
+function fmt(iso){if(!iso)return'';return new Date(iso).toLocaleDateString('en-NP',{day:'numeric',month:'short',year:'numeric'});}
+function strs(n){return'⭐'.repeat(Math.min(5,Math.max(1,n||5)));}
+function toast(msg,type){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast'+(type?' '+type:'');
+  void t.offsetWidth;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3200);
+}
+function ldr(on,txt){
+  if(txt)document.getElementById('ldr-txt').textContent=txt;
+  document.getElementById('ldr').classList.toggle('on',on);
+}
+
+const ADMIN_EMAIL='xkushal73@gmail.com';
+const ADMIN_PASS='KushalAirTaxiNepal@#20';
+
+// ===== AIRLINE DATA =====
+const DEFAULTS=[
+  {id:'buddha',name:'Buddha Air',emoji:'✈',style:'ac-buddha',btn:'btn-buddha',badge:'Most Popular',
+   routes:['Kathmandu','Bhadrapur','Bharatpur','Biratnagar','Dhangadi','Janakpur','Nepalgunj','Pokhara','Rajbiraj','Simara','Surkhet','Tumlingtar']},
+  {id:'yeti',name:'Yeti Airlines',emoji:'🏔',style:'ac-yeti',btn:'btn-yeti',badge:'',
+   routes:['Pokhara','Kathmandu','Bhairahawa','Janakpur','Bhadrapur','Biratnagar']},
+  {id:'shree',name:'Shree Airlines',emoji:'🦅',style:'ac-shree',btn:'btn-shree',badge:'',
+   routes:['Pokhara','Kathmandu','Bhairahawa','Bhopal','Bhadrapur','Biratnagar','Simara','Surkhet','Dhangadhi']}
+];
+let airlines=[];
+
+async function loadAirlines(){
+  try{
+    const snap=await getDocs(collection(db,'airlines'));
+    if(snap.empty){
+      for(const a of DEFAULTS) await setDoc(doc(db,'airlines',a.id),a);
+      airlines=JSON.parse(JSON.stringify(DEFAULTS));
+    }else{
+      airlines=[];
+      snap.forEach(d=>airlines.push({...d.data(),id:d.id}));
+      const ord=['buddha','yeti','shree'];
+      airlines.sort((a,b)=>(ord.indexOf(a.id)<0?99:ord.indexOf(a.id))-(ord.indexOf(b.id)<0?99:ord.indexOf(b.id)));
+    }
+  }catch(e){airlines=JSON.parse(JSON.stringify(DEFAULTS));}
+  renderAirlines();
+}
+
+function renderAirlines(){
+  const g=document.getElementById('al-grid');
+  g.innerHTML='';
+  airlines.forEach(a=>{
+    const r=a.routes||[];
+    const d=document.createElement('div');
+    d.className='ac '+(a.style||'ac-extra');
+    d.innerHTML=`
+      ${a.badge?`<div class="ac-badge">${esc(a.badge)}</div>`:''}
+      <div class="ac-body">
+        <div class="ac-top">
+          <div class="ac-ico">${esc(a.emoji||'✈')}</div>
+          <div><div class="ac-name">${esc(a.name)}</div><div class="ac-sub">${r.length} routes available</div></div>
+        </div>
+        <div class="ac-hr"></div>
+        <div class="ac-route">
+          <span class="ac-city">${esc(r[0]||'Kathmandu')}</span>
+          <span class="ac-plane">✈</span>
+          <span class="ac-city">${esc(r[1]||'Pokhara')}</span>
+        </div>
+        <p class="ac-desc">Book the cheapest seats on ${esc(a.name)}. All routes at unbeatable prices.</p>
+        <button class="ac-btn ${a.btn||'btn-extra'}">Book on ${esc(a.name)} →</button>
+      </div>`;
+    d.querySelector('button').addEventListener('click',()=>openBooking(a.id));
+    g.appendChild(d);
+  });
+}
+
+// ===== MARQUEE =====
+async function refreshMarquee(){
+  try{
+    const d=await getDoc(doc(db,'settings','marquee'));
+    const w=document.getElementById('mq'),t=document.getElementById('mq-track');
+    if(d.exists&&d.data().msg&&d.data().expires>Date.now()){
+      const m=esc(d.data().msg);
+      t.innerHTML=`<span>📢 ${m}</span><span>📢 ${m}</span><span>📢 ${m}</span><span>📢 ${m}</span>`;
+      w.classList.add('hot');
+    }else{
+      t.innerHTML=`<span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span><span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span><span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span><span>✈ Nepal's Cheapest Flights. Your satisfaction our priority ✈</span>`;
+      w.classList.remove('hot');
+    }
+  }catch(e){}
+}
+refreshMarquee();
+setInterval(refreshMarquee,60000);
+
+// ===== BOOKING =====
+let curAl=null,bkFrom='',bkTo='',bkDate=null,bkTime='',calY=new Date().getFullYear(),calM=new Date().getMonth();
+
+function openBooking(id){
+  curAl=airlines.find(a=>a.id===id);
+  if(!curAl)return;
+  bkFrom='';bkTo='';bkDate=null;
+  calY=new Date().getFullYear();calM=new Date().getMonth();
+  document.getElementById('bk-title').textContent='Book · '+curAl.name;
+  const rs=curAl.routes||[];
+  const f=document.getElementById('bk-from'),t=document.getElementById('bk-to');
+  f.innerHTML='<option value="">Select origin</option>';
+  t.innerHTML='<option value="">Select destination</option>';
+  rs.forEach(r=>{
+    f.innerHTML+=`<option value="${esc(r)}">${esc(r)}</option>`;
+    t.innerHTML+=`<option value="${esc(r)}">${esc(r)}</option>`;
+  });
+  ['bk-name','bk-age','bk-email','bk-pp','bk-pn'].forEach(i=>{const el=document.getElementById(i);if(el)el.value='';});
+  document.getElementById('bk-tickets').value='1';
+  document.getElementById('date-lbl').textContent='';
+  bkTime='';
+  appliedPromo=null;
+  document.getElementById('time-lbl').textContent='';
+  document.getElementById('time-slots-wrap').style.display='none';
+  document.getElementById('promo-input').value='';
+  document.getElementById('promo-result').textContent='';
+  goStep(1);
+  document.getElementById('bk-mo').classList.add('on');
+}
+
+function goStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));
+  document.getElementById('s'+n).classList.add('on');
+  const ind=document.getElementById('steps-ind');
+  ind.innerHTML='';
+  for(let i=1;i<=6;i++){const d=document.createElement('div');d.className='sdot'+(i===n?' on':i<n?' done':'');ind.appendChild(d);}
+  if(n===2) renderCal();
+  if(n===4){ buildSum4(); loadPriceDisplay(); }
+  if(n===5) showBill();
+  if(n===6){ buildSum(); loadPm(); }
+}
+
+// Step buttons
+document.getElementById('s1n').addEventListener('click',()=>{
+  const f=document.getElementById('bk-from').value,t=document.getElementById('bk-to').value;
+  if(!f||!t){toast('Please select both From and To.','bad');return;}
+  if(f===t){toast('Origin and destination cannot be the same.','bad');return;}
+  bkFrom=f;bkTo=t;goStep(2);
+});
+document.getElementById('s2b').addEventListener('click',()=>goStep(1));
+document.getElementById('s2n').addEventListener('click',()=>{
+  if(!bkDate){toast('Please select a travel date.','bad');return;}
+  if(!bkTime){toast('Please select a departure time.','bad');return;}
+  goStep(3);
+});
+document.getElementById('s3b').addEventListener('click',()=>goStep(2));
+document.getElementById('s3n').addEventListener('click',()=>{
+  let ok=true;
+  ['bk-name','bk-age','bk-tickets','bk-email'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el.value.trim()){el.style.borderColor='#e05555';ok=false;}else el.style.borderColor='';
+  });
+  if(!ok){toast('Please fill all required fields.','bad');return;}
+  goStep(4);
+});
+document.getElementById('s4b').addEventListener('click',()=>goStep(3));
+document.getElementById('s4n').addEventListener('click',()=>{
+  const pd=document.getElementById('price-display');
+  if(pd && pd.dataset.noflight==='true'){toast('Sorry, no flight available on this route.','bad');return;}
+  goStep(5);
+});
+document.getElementById('s5b').addEventListener('click',()=>goStep(4));
+document.getElementById('s5n').addEventListener('click',()=>goStep(6));
+document.getElementById('s6b').addEventListener('click',()=>goStep(5));
+document.getElementById('s6n').addEventListener('click',async()=>{
+  const pp=document.getElementById('bk-pp').value.trim();
+  const pn=document.getElementById('bk-pn').value.trim();
+  if(!pp||!pn){toast('Please enter payment phone and name.','bad');return;}
+  ldr(true,'Submitting booking...');
+  const ds=bkDate?bkDate.getDate()+' '+MS[bkDate.getMonth()]+' '+bkDate.getFullYear():'';
+  try{
+    const bookingData = {
+      customerName:document.getElementById('bk-name').value.trim(),
+      age:document.getElementById('bk-age').value,
+      email:document.getElementById('bk-email').value.trim(),
+      phoneNumber:pp,paymentName:pn,
+      selectedDate:ds,departureTime:bkTime,route:bkFrom+' → '+bkTo,
+      selectedAirline:curAl.name,
+      tickets:document.getElementById('bk-tickets').value,
+      status:'new',time:new Date().toISOString(),
+      promoCode: appliedPromo ? appliedPromo.code : '',
+      promoDiscount: appliedPromo ? appliedPromo.discount : 0,
+      promoAffiliate: appliedPromo ? appliedPromo.affiliateName : ''
+    };
+    await addDoc(collection(db,'bookings'), bookingData);
+    // Record promo usage
+    if(appliedPromo){
+      const usageRef = doc(db,'promocodes',appliedPromo.docId);
+      const promoDoc = await getDoc(usageRef);
+      const uses = promoDoc.exists ? (promoDoc.data().uses||[]) : [];
+      const basePrice = parseInt(document.getElementById('price-display').dataset.basePrice||0);
+      const ticketCount = parseInt(bookingData.tickets||1);
+      const discAmt = Math.round(basePrice * (appliedPromo.discount/100)) * ticketCount;
+      uses.push({
+        customerName: bookingData.customerName,
+        phone: bookingData.phoneNumber,
+        route: bookingData.route,
+        date: bookingData.selectedDate,
+        tickets: ticketCount,
+        discount: appliedPromo.discount,
+        discountAmount: discAmt,
+        time: bookingData.time
+      });
+      await updateDoc(usageRef, {uses, totalUses: uses.length});
+      appliedPromo = null;
+    }
+    ldr(false);
+    document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));
+    document.getElementById('s7').classList.add('on');
+    document.getElementById('steps-ind').innerHTML='';
+  }catch(e){ldr(false);toast('Error. Please contact us on WhatsApp.','bad');}
+});
+document.getElementById('s7d').addEventListener('click',()=>document.getElementById('bk-mo').classList.remove('on'));
+document.getElementById('bk-x').addEventListener('click',()=>document.getElementById('bk-mo').classList.remove('on'));
+document.getElementById('bk-mo').addEventListener('click',e=>{if(e.target===document.getElementById('bk-mo'))document.getElementById('bk-mo').classList.remove('on');});
+
+function buildSum4(){
+  const ds=bkDate?bkDate.getDate()+' '+MS[bkDate.getMonth()]+' '+bkDate.getFullYear():'';
+  document.getElementById('bk-sum4').innerHTML=
+    `<b>Airline:</b> ${esc(curAl?.name||'')} | <b>Route:</b> ${esc(bkFrom)} → ${esc(bkTo)}<br>
+     <b>Date:</b> ${esc(ds)} | <b>Time:</b> ${esc(bkTime)} | <b>Tickets:</b> ${esc(document.getElementById('bk-tickets').value)}<br>
+     <b>Passenger:</b> ${esc(document.getElementById('bk-name').value)} | <b>Age:</b> ${esc(document.getElementById('bk-age').value)}${appliedPromo?`<br><b style="color:#4ade80">🎟 Promo: ${esc(appliedPromo.code)} (${appliedPromo.discount}% off)</b>`:''}`;
+}
+
+async function loadPriceDisplay(){
+  const c=document.getElementById('price-display');
+  c.innerHTML='<div style="color:var(--muted);font-size:13px">Loading price...</div>';
+  c.dataset.noflight='false';
+  const tickets=parseInt(document.getElementById('bk-tickets').value)||1;
+  try{
+    const key=(curAl?.id||'')+'_'+(bkFrom+'_'+bkTo).replace(/ /g,'');
+    const altKey=(curAl?.id||'')+'_'+(bkTo+'_'+bkFrom).replace(/ /g,'');
+    let d=await getDoc(doc(db,'routeprices',key));
+    if(!d.exists) d=await getDoc(doc(db,'routeprices',altKey));
+    if(d.exists&&d.data()){
+      const x=d.data();
+      if(x.noflight){
+        c.innerHTML=`<div style="background:rgba(224,85,85,0.08);border:1px solid rgba(224,85,85,0.3);border-radius:12px;padding:20px;text-align:center">
+          <div style="font-size:28px;margin-bottom:8px">🚫</div>
+          <div style="font-size:16px;font-weight:600;color:#e05555;margin-bottom:6px">No Flight Available</div>
+          <div style="font-size:13px;color:var(--muted)">Sorry, there are currently no flights on this route. Please contact us on WhatsApp for alternatives.</div>
+        </div>`;
+        c.dataset.noflight='true';
+        document.getElementById('s4n').textContent='No Flight Available';
+        document.getElementById('s4n').disabled=true;
+        document.getElementById('s4n').style.opacity='0.4';
+      } else if(x.price){
+        const total=parseInt(x.price)*tickets;
+        c.dataset.basePrice = x.price;
+        c.innerHTML=`<div style="background:rgba(26,79,168,0.08);border:1px solid rgba(26,79,168,0.3);border-radius:12px;padding:20px;text-align:center">
+          <div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Fare per person</div>
+          <div style="font-size:44px;font-weight:700;font-family:'Cormorant Garamond',serif;color:var(--gold);margin-bottom:4px">NPR ${parseInt(x.price).toLocaleString()}</div>
+          ${tickets>1?`<div style="font-size:14px;color:var(--muted);margin-bottom:4px">${tickets} tickets × NPR ${parseInt(x.price).toLocaleString()}</div>
+          <div style="font-size:18px;font-weight:600;color:#4ade80">Total: NPR ${total.toLocaleString()}</div>`:''}
+          <div style="font-size:12px;color:var(--muted);margin-top:10px">✈ ${esc(bkFrom)} → ${esc(bkTo)} · ${esc(curAl?.name||'')}</div>
+        </div>`;
+        document.getElementById('s4n').textContent='Proceed to Payment →';
+        document.getElementById('s4n').disabled=false;
+        document.getElementById('s4n').style.opacity='1';
+      } else {
+        showNoPriceSet();
+      }
+    } else {
+      showNoPriceSet();
+    }
+  }catch(e){showNoPriceSet();}
+
+  function showNoPriceSet(){
+    c.innerHTML=`<div style="background:rgba(232,200,74,0.06);border:1px solid rgba(232,200,74,0.2);border-radius:12px;padding:20px;text-align:center">
+      <div style="font-size:28px;margin-bottom:8px">💬</div>
+      <div style="font-size:15px;font-weight:600;color:var(--gold);margin-bottom:6px">Price on Request</div>
+      <div style="font-size:13px;color:var(--muted)">Price for this route will be confirmed by our team. You can still book and we will contact you.</div>
+    </div>`;
+    document.getElementById('s4n').textContent='Proceed to Payment →';
+    document.getElementById('s4n').disabled=false;
+    document.getElementById('s4n').style.opacity='1';
+  }
+}
+
+function showBill(){
+  const c = document.getElementById('bill-display');
+  const priceEl = document.getElementById('price-display');
+  const basePrice = priceEl ? parseInt(priceEl.dataset.basePrice||0) : 0;
+  const tickets = parseInt(document.getElementById('bk-tickets').value)||1;
+  const ds = bkDate ? bkDate.getDate()+' '+MS[bkDate.getMonth()]+' '+bkDate.getFullYear() : '';
+
+  if(!basePrice){
+    // No price set - just show summary
+    c.innerHTML =
+      '<div style="background:var(--sur);border:1px solid var(--bdr);border-radius:14px;overflow:hidden">' +
+        '<div style="background:rgba(26,79,168,0.1);padding:14px 20px;border-bottom:1px solid var(--bdr)">' +
+          '<div style="font-size:12px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase">Flight Summary</div>' +
+        '</div>' +
+        '<div style="padding:18px 20px">' +
+          '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+            '<span style="color:var(--muted)">Route</span><span style="color:var(--txt);font-weight:600">'+esc(bkFrom)+' → '+esc(bkTo)+'</span>' +
+          '</div>' +
+          '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+            '<span style="color:var(--muted)">Airline</span><span style="color:var(--txt)">'+esc(curAl?curAl.name:'')+'</span>' +
+          '</div>' +
+          '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+            '<span style="color:var(--muted)">Date & Time</span><span style="color:var(--txt)">'+esc(ds)+' · '+esc(bkTime)+'</span>' +
+          '</div>' +
+          '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+            '<span style="color:var(--muted)">Tickets</span><span style="color:var(--txt)">'+tickets+'</span>' +
+          '</div>' +
+          '<div style="padding:14px 0;text-align:center">' +
+            '<div style="font-size:13px;color:var(--gold);font-weight:600;margin-bottom:4px">Price on Request</div>' +
+            '<div style="font-size:12px;color:var(--muted)">Our team will confirm the fare and contact you.</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    return;
+  }
+
+  const hasPromo = appliedPromo !== null;
+  const disc = hasPromo ? appliedPromo.discount : 0;
+  const discAmt = hasPromo ? Math.round(basePrice * disc / 100) : 0;
+  const pricePerTicket = basePrice - discAmt;
+  const totalOriginal = basePrice * tickets;
+  const totalFinal = pricePerTicket * tickets;
+  const totalSaved = discAmt * tickets;
+
+  c.innerHTML =
+    '<div style="background:var(--sur);border:1px solid '+(hasPromo?'rgba(74,222,128,0.4)':'var(--bdr)')+';border-radius:14px;overflow:hidden">' +
+
+      // Header
+      '<div style="background:'+(hasPromo?'rgba(74,222,128,0.08)':'rgba(26,79,168,0.1)')+';padding:14px 20px;border-bottom:1px solid '+(hasPromo?'rgba(74,222,128,0.2)':'var(--bdr)')+'">' +
+        '<div style="font-size:13px;font-weight:700;color:'+(hasPromo?'#4ade80':'var(--gold)')+'">' +
+          (hasPromo ? '🎟 Promo Applied: '+esc(appliedPromo.code)+' ('+disc+'% OFF)' : '🧾 Flight Bill') +
+        '</div>' +
+      '</div>' +
+
+      '<div style="padding:18px 20px">' +
+
+        // Route info
+        '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+          '<span style="color:var(--muted)">✈ Route</span>' +
+          '<span style="color:var(--txt);font-weight:600">'+esc(bkFrom)+' → '+esc(bkTo)+'</span>' +
+        '</div>' +
+        '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+          '<span style="color:var(--muted)">🏢 Airline</span>' +
+          '<span style="color:var(--txt)">'+esc(curAl?curAl.name:'')+'</span>' +
+        '</div>' +
+        '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+          '<span style="color:var(--muted)">📅 Date & Time</span>' +
+          '<span style="color:var(--txt)">'+esc(ds)+' · '+esc(bkTime)+'</span>' +
+        '</div>' +
+        '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px">' +
+          '<span style="color:var(--muted)">🎫 Tickets</span>' +
+          '<span style="color:var(--txt)">'+tickets+' person(s)</span>' +
+        '</div>' +
+
+        // Price breakdown
+        '<div style="margin-top:14px;background:#0f0f18;border-radius:10px;overflow:hidden">' +
+          '<div style="padding:10px 16px;background:rgba(255,255,255,0.03);border-bottom:1px solid var(--bdr);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)">Price Breakdown</div>' +
+
+          '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bdr)">' +
+            '<span style="font-size:13px;color:var(--muted)">Price per person</span>' +
+            '<span style="font-size:15px;color:var(--txt)'+(hasPromo?';text-decoration:line-through':'')+'">' +
+              'NPR '+basePrice.toLocaleString() +
+            '</span>' +
+          '</div>' +
+
+          (hasPromo ?
+            '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bdr)">' +
+              '<span style="font-size:13px;color:#e05555">Discount ('+disc+'%) &nbsp;<span style="font-size:11px;color:var(--muted)">NPR '+basePrice.toLocaleString()+' × '+disc+' ÷ 100</span></span>' +
+              '<span style="font-size:15px;color:#e05555;font-weight:600">− NPR '+discAmt.toLocaleString()+'</span>' +
+            '</div>' +
+            '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bdr)">' +
+              '<span style="font-size:13px;color:#4ade80;font-weight:600">Discounted price per person</span>' +
+              '<span style="font-size:18px;color:#4ade80;font-weight:700">NPR '+pricePerTicket.toLocaleString()+'</span>' +
+            '</div>'
+          : '') +
+
+          (tickets > 1 ?
+            '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bdr)">' +
+              '<span style="font-size:13px;color:var(--muted)">'+tickets+' tickets × NPR '+pricePerTicket.toLocaleString()+'</span>' +
+              '<span style="font-size:15px;color:var(--txt)">NPR '+totalFinal.toLocaleString()+'</span>' +
+            '</div>'
+          : '') +
+
+          // Total
+          '<div style="display:flex;justify-content:space-between;align-items:center;padding:16px 16px 12px">' +
+            '<span style="font-size:15px;font-weight:700;color:var(--txt)">Total Amount to Pay</span>' +
+            '<span style="font-size:30px;font-weight:700;font-family:Cormorant Garamond,serif;color:'+(hasPromo?'#4ade80':'var(--gold)')+'">NPR '+totalFinal.toLocaleString()+'</span>' +
+          '</div>' +
+
+          (hasPromo ?
+            '<div style="text-align:center;padding:0 16px 14px;font-size:13px;color:#4ade80">🎉 You saved NPR '+totalSaved.toLocaleString()+'! ('+disc+'% off)</div>'
+          : '') +
+
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+
+function buildSum(){
+  const ds=bkDate?bkDate.getDate()+' '+MS[bkDate.getMonth()]+' '+bkDate.getFullYear():'';
+  document.getElementById('bk-sum').innerHTML=
+    `<b>Airline:</b> ${esc(curAl?.name||'')} | <b>Route:</b> ${esc(bkFrom)} → ${esc(bkTo)}<br>
+     <b>Date:</b> ${esc(ds)} | <b>Time:</b> ${esc(bkTime)} | <b>Tickets:</b> ${esc(document.getElementById('bk-tickets').value)}<br>
+     <b>Passenger:</b> ${esc(document.getElementById('bk-name').value)} | <b>Age:</b> ${esc(document.getElementById('bk-age').value)}<br>
+     <b>Email:</b> ${esc(document.getElementById('bk-email').value)}`;
+}
+
+async function loadPm(){
+  const c=document.getElementById('pm-disp');
+  c.innerHTML='<div style="color:var(--muted);font-size:13px;padding:6px 0">Loading payment options...</div>';
+  const ms=['esewa','khalti','bank'];const items=[];
+  for(const m of ms){
+    try{
+      const d=await getDoc(doc(db,'payments',m));
+      if(d.exists){
+        const x=d.data();
+        if(!x.num&&!x.acc)continue;
+        let h='';
+        if(m==='esewa')h=`<div class="pm-nm">💚 eSewa</div><div class="pm-dt">Number: <b>${esc(x.num||'')}</b><br>Name: ${esc(x.name||'')}</div>`;
+        if(m==='khalti')h=`<div class="pm-nm">💜 Khalti</div><div class="pm-dt">Number: <b>${esc(x.num||'')}</b><br>Name: ${esc(x.name||'')}</div>`;
+        if(m==='bank')h=`<div class="pm-nm">🏦 Bank Transfer</div><div class="pm-dt">Bank: ${esc(x.bname||'')}<br>Account: <b>${esc(x.acc||'')}</b><br>Name: ${esc(x.holder||'')}</div>`;
+        if(x.qr)h+=`<img src="${esc(x.qr)}" class="pm-qr" alt="QR"/>`;
+        items.push(`<div class="pm-item">${h}</div>`);
+      }
+    }catch(e){}
+  }
+  c.innerHTML=items.length?items.join(''):'<div class="no-pm">Payment methods coming soon. Contact us on WhatsApp.</div>';
+}
+
+// ===== TIME SLOTS =====
+async function loadTimeSlots(){
+  const wrap=document.getElementById('time-slots-wrap');
+  const grid=document.getElementById('time-slots-grid');
+  const timeLbl=document.getElementById('time-lbl');
+  wrap.style.display='block';
+  grid.innerHTML='<div style="color:var(--muted);font-size:13px;padding:8px 0">Loading times...</div>';
+  bkTime='';
+  timeLbl.textContent='';
+  try{
+    const key=(curAl?.id||'')+'_'+(bkFrom+'_'+bkTo).replace(/ /g,'');
+    const d=await getDoc(doc(db,'flighttimes',key));
+    if(d.exists&&d.data().times&&d.data().times.length){
+      const times=d.data().times;
+      grid.innerHTML='';
+      times.forEach(t=>{
+        const btn=document.createElement('button');
+        btn.className='time-slot';
+        btn.textContent=t;
+        btn.addEventListener('click',()=>{
+          document.querySelectorAll('.time-slot').forEach(x=>x.classList.remove('sel'));
+          btn.classList.add('sel');
+          bkTime=t;
+          timeLbl.textContent='✓ Departure: '+t;
+        });
+        grid.appendChild(btn);
+      });
+    } else {
+      grid.innerHTML=`<div style="background:rgba(232,200,74,0.06);border:1px solid rgba(232,200,74,0.2);border-radius:10px;padding:16px;text-align:center;width:100%">
+        <div style="font-size:20px;margin-bottom:6px">⏰</div>
+        <div style="font-size:13px;color:var(--gold);font-weight:600;margin-bottom:4px">Flight times not set yet</div>
+        <div style="font-size:12px;color:var(--muted)">Our team will confirm your departure time after booking.</div>
+      </div>`;
+      bkTime='TBD - Team will confirm';
+    }
+  }catch(e){
+    grid.innerHTML=`<div style="font-size:13px;color:var(--muted);padding:8px 0">Could not load times. Our team will confirm after booking.</div>`;
+    bkTime='TBD - Team will confirm';
+  }
+}
+
+// ===== CALENDAR =====
+function renderCal(){
+  document.getElementById('cal-lbl').textContent=MN[calM]+' '+calY;
+  const days=document.getElementById('cal-days');days.innerHTML='';
+  const today=new Date();today.setHours(0,0,0,0);
+  const first=new Date(calY,calM,1).getDay(),total=new Date(calY,calM+1,0).getDate();
+  for(let i=0;i<first;i++){const d=document.createElement('div');d.className='cd emp';days.appendChild(d);}
+  for(let n=1;n<=total;n++){
+    const el=document.createElement('div');el.className='cd';el.textContent=n;
+    const dt=new Date(calY,calM,n);
+    if(dt<today){el.classList.add('pst');}
+    else{
+      if(dt.toDateString()===today.toDateString())el.classList.add('tod');
+      if(bkDate&&bkDate.toDateString()===dt.toDateString())el.classList.add('sel');
+      el.addEventListener('click',()=>{
+        bkDate=dt;
+        document.querySelectorAll('#cal-days .cd').forEach(x=>x.classList.remove('sel'));
+        el.classList.add('sel');
+        document.getElementById('date-lbl').textContent=`✓ ${n} ${MS[calM]} ${calY}`;
+        bkTime='';
+        document.getElementById('time-lbl').textContent='';
+        loadTimeSlots();
+      });
+    }
+    days.appendChild(el);
+  }
+}
+document.getElementById('cal-p').addEventListener('click',()=>{calM--;if(calM<0){calM=11;calY--;}renderCal();});
+document.getElementById('cal-n').addEventListener('click',()=>{calM++;if(calM>11){calM=0;calY++;}renderCal();});
+
+// ===== REVIEWS =====
+async function loadPubRv(){
+  const c=document.getElementById('pub-rv');c.innerHTML='';
+  try{
+    const snap=await getDocs(query(collection(db,'reviews'),orderBy('time','desc')));
+    if(snap.empty){c.innerHTML='<div class="no-rv">No reviews yet. Be the first!</div>';return;}
+    snap.forEach(d=>{
+      const r={id:d.id,...d.data()};
+      c.innerHTML+=`<div class="rvi">
+        <div class="rvh"><div class="rvav">${(r.name||'?').charAt(0).toUpperCase()}</div>
+        <div><div class="rvnm">${esc(r.name)}</div><div class="rvst">${strs(r.stars)}</div></div>
+        <div class="rvtm">${fmt(r.time)}</div></div>
+        <div class="rvbd">${esc(r.body)}</div>
+        ${r.reply?`<div class="rv-rpl"><div class="rv-rpl-lbl">✈ Air Taxi Nepal replied:</div><div class="rv-rpl-txt">${esc(r.reply)}</div></div>`:''}
+      </div>`;
+    });
+  }catch(e){c.innerHTML='<div class="no-rv">Could not load reviews.</div>';}
+}
+loadPubRv();
+
+document.getElementById('rv-btn').addEventListener('click',async()=>{
+  const name=document.getElementById('rv-name').value.trim();
+  const body=document.getElementById('rv-body').value.trim();
+  const s=parseInt(document.getElementById('rv-stars').value);
+  if(!name||!body){toast('Please enter your name and review.','bad');return;}
+  const btn=document.getElementById('rv-btn');btn.textContent='Sending...';btn.disabled=true;
+  try{
+    await addDoc(collection(db,'reviews'),{name,body,stars:s,reply:null,time:new Date().toISOString()});
+    document.getElementById('rv-name').value='';document.getElementById('rv-body').value='';
+    toast('Review submitted!','ok');loadPubRv();
+  }catch(e){toast('Error submitting.','bad');}
+  btn.textContent='Submit Review ✈';btn.disabled=false;
+});
+
+// ===== LOGIN =====
+document.getElementById('admin-btn').addEventListener('click',()=>{
+  document.getElementById('l-em').value='';document.getElementById('l-pw').value='';
+  document.getElementById('lerr').style.display='none';
+  document.getElementById('login-mo').classList.add('on');
+  setTimeout(()=>document.getElementById('l-em').focus(),150);
+});
+document.getElementById('login-x').addEventListener('click',()=>document.getElementById('login-mo').classList.remove('on'));
+document.getElementById('login-mo').addEventListener('click',e=>{if(e.target===document.getElementById('login-mo'))document.getElementById('login-mo').classList.remove('on');});
+document.getElementById('l-pw').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
+document.getElementById('l-em').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('l-pw').focus();});
+document.getElementById('login-btn').addEventListener('click',doLogin);
+
+function doLogin(){
+  const em=document.getElementById('l-em').value.trim();
+  const pw=document.getElementById('l-pw').value;
+  const btn=document.getElementById('login-btn');
+  document.getElementById('lerr').style.display='none';
+  if(em===ADMIN_EMAIL&&pw===ADMIN_PASS){
+    btn.textContent='Loading...';btn.disabled=true;
+    setTimeout(()=>{btn.textContent='Login →';btn.disabled=false;document.getElementById('login-mo').classList.remove('on');openAdmin();},500);
+  }else{document.getElementById('lerr').style.display='block';}
+}
+
+// ===== ADMIN =====
+function openAdmin(){
+  document.getElementById('adm').style.display='block';
+  document.getElementById('adm').scrollTop=0;
+  loadAdmBk();loadAdmUpd();loadAdmRv();loadAdmPay();loadAdmRt();loadAdmPrices();initFlightTimesAdmin();
+}
+
+document.getElementById('adm-logout').addEventListener('click',()=>{
+  document.getElementById('adm').style.display='none';toast('Logged out.');
+});
+
+document.querySelectorAll('.atab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.atab').forEach(t=>t.classList.remove('on'));
+    document.querySelectorAll('.asec').forEach(s=>s.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('asec-'+btn.dataset.sec).classList.add('on');
+    const sec = btn.dataset.sec;
+    if(sec==='bookings') loadAdmBk();
+    if(sec==='reviews')  loadAdmRv();
+    if(sec==='routes')   loadAdmRt();
+    if(sec==='prices')   loadAdmPrices();
+    if(sec==='times')    initFlightTimesAdmin();
+    if(sec==='promo')    initPromoTab();
+  });
+});
+
+async function loadAdmBk(){
+  const c=document.getElementById('adm-bk');c.innerHTML='<p style="color:var(--muted);font-size:13px">Loading...</p>';
+  try{
+    const snap=await getDocs(query(collection(db,'bookings'),orderBy('time','desc')));
+    if(snap.empty){c.innerHTML='<p style="color:var(--muted);font-size:13px">No bookings yet.</p>';return;}
+    c.innerHTML='';
+    snap.forEach(d=>{
+      const b={id:d.id,...d.data()};
+      const div=document.createElement('div');div.className='bk-card';
+      div.innerHTML=`
+        <div class="bk-top">
+          <div><div class="bk-nm">${esc(b.customerName||'')}</div><div class="bk-rt">${esc(b.route||'')} · ${esc(b.selectedAirline||'')}</div></div>
+          <span class="bk-st st-${b.status||'new'}">${b.status||'new'}</span>
+        </div>
+        <div class="bk-mt">
+          👤 Name: <b style="color:#f0ede8">${esc(b.customerName||'')}</b><br>
+          📱 Phone: <b style="color:#f0ede8">${esc(b.phoneNumber||'')}</b> &nbsp;|&nbsp; 📧 ${esc(b.email||'')}<br>
+          🎂 Age: ${esc(String(b.age||''))} &nbsp;|&nbsp; 🎫 ${esc(String(b.tickets||'1'))} ticket(s)<br>
+          ✈ Route: <b style="color:#e8c84a">${esc(b.route||'')} · ${esc(b.selectedAirline||'')}</b><br>
+          📅 Date: <b style="color:#f0ede8">${esc(b.selectedDate||'')}</b> &nbsp;|&nbsp; 🕐 Time: <b style="color:#4ade80">${esc(b.departureTime||'Not selected')}</b><br>
+          💳 Payment name: ${esc(b.paymentName||'')} &nbsp;|&nbsp; 🕑 Booked: ${fmt(b.time)}${b.promoCode?`<br>          🎟 Promo used: <b style="color:#4ade80">${esc(b.promoCode)}</b> (${esc(String(b.promoDiscount||0))}% off · affiliate: ${esc(b.promoAffiliate||'')})`:''}  
+        </div>
+        <div class="bk-acts">
+          <button class="bc">✅ Confirm</button>
+          <button class="br">❌ Reject</button>
+          <button class="bd">🗑 Delete</button>
+        </div>`;
+      div.querySelector('.bc').addEventListener('click',async()=>{try{await updateDoc(doc(db,'bookings',b.id),{status:'confirmed'});toast('Confirmed','ok');loadAdmBk();}catch(e){toast('Error','bad');}});
+      div.querySelector('.br').addEventListener('click',async()=>{try{await updateDoc(doc(db,'bookings',b.id),{status:'rejected'});toast('Rejected','ok');loadAdmBk();}catch(e){toast('Error','bad');}});
+      div.querySelector('.bd').addEventListener('click',async()=>{if(!confirm('Delete?'))return;try{await deleteDoc(doc(db,'bookings',b.id));toast('Deleted','ok');loadAdmBk();}catch(e){toast('Error','bad');}});
+      c.appendChild(div);
+    });
+  }catch(e){c.innerHTML=`<p style="color:#e05555">Error: ${e.message}</p>`;}
+}
+
+async function loadAdmUpd(){
+  try{
+    const d=await getDoc(doc(db,'settings','marquee'));
+    const el=document.getElementById('cur-upd');
+    if(d.exists&&d.data().msg&&d.data().expires>Date.now()){
+      el.textContent='📢 '+d.data().msg+' (expires ~'+Math.ceil((d.data().expires-Date.now())/3600000)+'h)';
+      el.style.color='var(--gold)';
+    }else{el.textContent='No active custom message.';el.style.color='var(--muted)';}
+  }catch(e){}
+}
+document.getElementById('upd-pub').addEventListener('click',async()=>{
+  const msg=document.getElementById('upd-msg').value.trim();
+  if(!msg){toast('Please type a message.','bad');return;}
+  try{await setDoc(doc(db,'settings','marquee'),{msg,expires:Date.now()+24*60*60*1000});document.getElementById('upd-msg').value='';toast('Published!','ok');loadAdmUpd();refreshMarquee();}
+  catch(e){toast('Error','bad');}
+});
+document.getElementById('upd-clr').addEventListener('click',async()=>{
+  if(!confirm('Clear message?'))return;
+  try{await setDoc(doc(db,'settings','marquee'),{msg:'',expires:0});toast('Cleared','ok');loadAdmUpd();refreshMarquee();}catch(e){toast('Error','bad');}
+});
+
+async function loadAdmRv(){
+  const c=document.getElementById('adm-rv');c.innerHTML='<p style="color:var(--muted);font-size:13px">Loading...</p>';
+  try{
+    const snap=await getDocs(query(collection(db,'reviews'),orderBy('time','desc')));
+    if(snap.empty){c.innerHTML='<p style="color:var(--muted)">No reviews yet.</p>';return;}
+    c.innerHTML='';
+    snap.forEach(d=>{
+      const r={id:d.id,...d.data()};
+      const div=document.createElement('div');div.className='acard';div.style.marginBottom='11px';
+      div.innerHTML=`
+        <div class="rvh"><div class="rvav">${(r.name||'?').charAt(0).toUpperCase()}</div>
+        <div><div class="rvnm">${esc(r.name)}</div><div class="rvst">${strs(r.stars)}</div></div>
+        <div class="rvtm">${fmt(r.time)}</div></div>
+        <div class="rvbd" style="margin:8px 0">${esc(r.body)}</div>
+        ${r.reply?`<div class="rv-rpl"><div class="rv-rpl-lbl">Your reply:</div><div class="rv-rpl-txt">${esc(r.reply)}</div></div>`:''}
+        <div class="rpl-row" style="margin-top:10px">
+          <input type="text" id="rp-${r.id}" placeholder="Reply..." value="${r.reply?esc(r.reply):''}"/>
+          <button class="rpl-b">Reply</button>
+          <button class="del-rv" style="background:#7f1d1d;border:none;color:#fca5a5;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:12px">Delete</button>
+        </div>`;
+      div.querySelector('.rpl-b').addEventListener('click',async()=>{
+        const val=document.getElementById('rp-'+r.id).value.trim();
+        if(!val){toast('Type a reply','bad');return;}
+        try{await updateDoc(doc(db,'reviews',r.id),{reply:val});toast('Replied!','ok');loadAdmRv();loadPubRv();}catch(e){toast('Error','bad');}
+      });
+      div.querySelector('.del-rv').addEventListener('click',async()=>{
+        if(!confirm('Delete review?'))return;
+        try{await deleteDoc(doc(db,'reviews',r.id));toast('Deleted','ok');loadAdmRv();loadPubRv();}catch(e){toast('Error','bad');}
+      });
+      c.appendChild(div);
+    });
+  }catch(e){c.innerHTML='<p style="color:#e05555">Error</p>';}
+}
+
+async function loadAdmPay(){
+  const map={esewa:['es-num','es-nm','es-qr'],khalti:['kh-num','kh-nm','kh-qr'],bank:['bk-bnk','bk-acc','bk-hldr','bk-bqr']};
+  const keys={esewa:['num','name','qr'],khalti:['num','name','qr'],bank:['bname','acc','holder','qr']};
+  for(const m of['esewa','khalti','bank']){
+    try{const d=await getDoc(doc(db,'payments',m));if(d.exists){const x=d.data();map[m].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.value=x[keys[m][i]]||'';});}}catch(e){}
+  }
+}
+async function savePay(m){
+  let data={};
+  if(m==='esewa')data={num:document.getElementById('es-num').value,name:document.getElementById('es-nm').value,qr:document.getElementById('es-qr').value};
+  if(m==='khalti')data={num:document.getElementById('kh-num').value,name:document.getElementById('kh-nm').value,qr:document.getElementById('kh-qr').value};
+  if(m==='bank')data={bname:document.getElementById('bk-bnk').value,acc:document.getElementById('bk-acc').value,holder:document.getElementById('bk-hldr').value,qr:document.getElementById('bk-bqr').value};
+  try{
+    await setDoc(doc(db,'payments',m),data);
+    const okId=m==='esewa'?'es-ok':m==='khalti'?'kh-ok':'bk-ok';
+    const ok=document.getElementById(okId);ok.style.display='block';setTimeout(()=>ok.style.display='none',3000);
+    toast('Payment saved!','ok');
+  }catch(e){toast('Error: '+e.message,'bad');}
+}
+document.getElementById('es-save').addEventListener('click',()=>savePay('esewa'));
+document.getElementById('kh-save').addEventListener('click',()=>savePay('khalti'));
+document.getElementById('bk-save').addEventListener('click',()=>savePay('bank'));
+
+async function loadAdmRt(){
+  try{
+    const snap=await getDocs(collection(db,'airlines'));
+    if(!snap.empty){
+      airlines=[];snap.forEach(d=>airlines.push({id:d.id,...d.data()}));
+      const ord=['buddha','yeti','shree'];
+      airlines.sort((a,b)=>(ord.indexOf(a.id)<0?99:ord.indexOf(a.id))-(ord.indexOf(b.id)<0?99:ord.indexOf(b.id)));
+    }
+  }catch(e){}
+  renderAdmRt();
+}
+function renderAdmRt(){
+  const c=document.getElementById('adm-rt');c.innerHTML='';
+  airlines.forEach(a=>{
+    const div=document.createElement('div');div.className='al-mgmt';
+    div.innerHTML=`
+      <div class="al-mgmt-hd"><div class="al-mgmt-nm">${esc(a.emoji||'✈')} ${esc(a.name)}</div>
+      <button class="abtn rd sm del-al-btn">Delete Airline</button></div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px" id="rl-${a.id}">
+        ${(a.routes||[]).map(r=>`<div class="rt-tag">${esc(r)}<button data-r="${esc(r)}" class="del-rt">×</button></div>`).join('')}
+      </div>
+      <div class="ar-row"><input type="text" class="nr-in" placeholder="Add route (e.g. Lukla)"/><button class="abtn add-rt-btn">+ Add</button></div>`;
+    div.querySelector('.del-al-btn').addEventListener('click',async()=>{
+      if(!confirm('Delete '+a.name+'?'))return;
+      try{await deleteDoc(doc(db,'airlines',a.id));airlines=airlines.filter(x=>x.id!==a.id);renderAdmRt();renderAirlines();toast('Airline deleted','ok');}catch(e){toast('Error','bad');}
+    });
+    div.querySelectorAll('.del-rt').forEach(btn=>btn.addEventListener('click',async()=>{
+      const r=btn.dataset.r;if(!confirm('Remove route: '+r+'?'))return;
+      const routes=(a.routes||[]).filter(x=>x!==r);
+      try{await updateDoc(doc(db,'airlines',a.id),{routes});a.routes=routes;renderAdmRt();renderAirlines();toast('Removed','ok');}catch(e){toast('Error','bad');}
+    }));
+    div.querySelector('.add-rt-btn').addEventListener('click',async()=>{
+      const inp=div.querySelector('.nr-in'),val=inp.value.trim();
+      if(!val){toast('Enter a route name','bad');return;}
+      if((a.routes||[]).includes(val)){toast('Already exists','bad');return;}
+      const routes=[...(a.routes||[]),val];
+      try{await updateDoc(doc(db,'airlines',a.id),{routes});a.routes=routes;inp.value='';renderAdmRt();renderAirlines();toast('Route added!','ok');}catch(e){toast('Error','bad');}
+    });
+    c.appendChild(div);
+  });
+}
+document.getElementById('add-al').addEventListener('click',async()=>{
+  const nm=document.getElementById('new-nm').value.trim();
+  const ico=document.getElementById('new-ico').value.trim()||'✈';
+  if(!nm){toast('Enter airline name','bad');return;}
+  const id=nm.toLowerCase().replace(/[^a-z0-9]/g,'-');
+  const newAl={id,name:nm,emoji:ico,style:'ac-extra',btn:'btn-extra',badge:'',routes:['Kathmandu']};
+  try{
+    await setDoc(doc(db,'airlines',id),newAl);
+    airlines.push(newAl);
+    document.getElementById('new-nm').value='';document.getElementById('new-ico').value='';
+    renderAdmRt();renderAirlines();toast('Airline added!','ok');
+  }catch(e){toast('Error: '+e.message,'bad');}
+});
+
+// ADMIN ROUTE PRICES
+document.getElementById('pr-airline').addEventListener('change',async function(){
+  const al=airlines.find(a=>a.id===this.value);
+  const routeSel=document.getElementById('pr-route');
+  routeSel.innerHTML='<option value="">Select route</option>';
+  if(!al)return;
+  const routes=al.routes||[];
+  // Generate all from→to combos
+  routes.forEach(from=>{
+    routes.forEach(to=>{
+      if(from!==to){
+        const o=document.createElement('option');
+        o.value=from+'_'+to;o.textContent=from+' → '+to;
+        routeSel.appendChild(o);
+      }
+    });
+  });
+  // Load existing prices for this airline
+  renderPricesList(al);
+});
+
+document.getElementById('pr-route').addEventListener('change',async function(){
+  const alId=document.getElementById('pr-airline').value;
+  const routeVal=this.value;
+  if(!alId||!routeVal)return;
+  const key=alId+'_'+routeVal.replace(/ /g,'');
+  try{
+    const d=await getDoc(doc(db,'routeprices',key));
+    if(d.exists&&d.data()){
+      document.getElementById('pr-price').value=d.data().price||'';
+      document.getElementById('pr-noflight').checked=d.data().noflight||false;
+    }else{
+      document.getElementById('pr-price').value='';
+      document.getElementById('pr-noflight').checked=false;
+    }
+  }catch(e){}
+});
+
+document.getElementById('pr-save-btn').addEventListener('click',async()=>{
+  const alId=document.getElementById('pr-airline').value;
+  const routeVal=document.getElementById('pr-route').value;
+  const price=document.getElementById('pr-price').value.trim();
+  const noflight=document.getElementById('pr-noflight').checked;
+  if(!alId||!routeVal){toast('Please select airline and route.','bad');return;}
+  const key=alId+'_'+routeVal.replace(/ /g,'');
+  try{
+    await setDoc(doc(db,'routeprices',key),{price,noflight,airline:alId,route:routeVal,updated:new Date().toISOString()});
+    const ok=document.getElementById('pr-ok');ok.style.display='block';setTimeout(()=>ok.style.display='none',2500);
+    toast('Price saved!','ok');
+    const al=airlines.find(a=>a.id===alId);
+    if(al)renderPricesList(al);
+  }catch(e){toast('Error: '+e.message,'bad');}
+});
+
+async function renderPricesList(al){
+  const c=document.getElementById('adm-prices-list');
+  c.innerHTML='<p style="color:var(--muted);font-size:13px">Loading prices...</p>';
+  try{
+    const snap=await getDocs(collection(db,'routeprices'));
+    const prices=[];
+    snap.forEach(d=>{if(d.data().airline===al.id)prices.push({id:d.id,...d.data()});});
+    if(!prices.length){c.innerHTML='<p style="color:var(--muted);font-size:13px">No prices set for '+esc(al.name)+' yet.</p>';return;}
+    c.innerHTML='<div class="acard-t" style="margin-bottom:12px">Saved prices for '+esc(al.name)+'</div>';
+    const table=document.createElement('div');
+    prices.forEach(p=>{
+      const row=document.createElement('div');
+      row.style.cssText='display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#0f0f18;border:1px solid var(--bdr);border-radius:8px;margin-bottom:8px;flex-wrap:wrap;gap:8px;';
+      const route=p.route?p.route.replace(/_/g,' → '):p.id;
+      row.innerHTML=`<div style="font-size:13px;font-weight:500">${esc(route)}</div>
+        <div style="display:flex;align-items:center;gap:10px">
+          ${p.noflight?'<span style="background:rgba(224,85,85,0.1);border:1px solid rgba(224,85,85,0.3);color:#e05555;font-size:11px;padding:3px 10px;border-radius:8px">🚫 No Flight</span>':''}
+          ${p.price&&!p.noflight?`<span style="color:var(--gold);font-weight:600;font-size:14px">NPR ${parseInt(p.price).toLocaleString()}</span>`:''}
+          <button class="abtn rd sm del-price-btn" data-key="${esc(p.id)}">Delete</button>
+        </div>`;
+      row.querySelector('.del-price-btn').addEventListener('click',async function(){
+        if(!confirm('Delete price for this route?'))return;
+        try{await deleteDoc(doc(db,'routeprices',this.dataset.key));toast('Deleted','ok');renderPricesList(al);}
+        catch(e){toast('Error','bad');}
+      });
+      table.appendChild(row);
+    });
+    c.appendChild(table);
+  }catch(e){c.innerHTML='<p style="color:#e05555">Error loading.</p>';}
+}
+
+function loadAdmPrices(){
+  // Populate airline dropdown
+  const sel=document.getElementById('pr-airline');
+  sel.innerHTML='<option value="">Select airline</option>';
+  airlines.forEach(a=>{sel.innerHTML+=`<option value="${esc(a.id)}">${esc(a.name)}</option>`;});
+  document.getElementById('adm-prices-list').innerHTML='';
+}
+
+// ===== PROMO CODE SYSTEM =====
+let appliedPromo = null; // {code, discount, docId}
+
+// Apply promo code button
+document.getElementById('promo-apply-btn').addEventListener('click', async()=>{
+  const code = document.getElementById('promo-input').value.trim().toUpperCase();
+  const result = document.getElementById('promo-result');
+  if(!code){ result.textContent=''; appliedPromo=null; updatePriceWithPromo(); return; }
+  result.innerHTML='<span style="color:var(--muted)">Checking...</span>';
+  try{
+    const snap = await getDocs(collection(db,'promocodes'));
+    let found = null;
+    snap.forEach(d=>{ if(d.data().code && d.data().code.toUpperCase()===code) found={id:d.id,...d.data()}; });
+    if(found){
+      appliedPromo = {code:found.code, discount:found.discount||5, docId:found.id, affiliateName:found.name};
+      result.innerHTML=`<span style="color:#4ade80">✅ Promo code applied! <b>${found.discount||5}% discount</b> for code <b>${esc(found.code)}</b> by ${esc(found.name)}</span>`;
+      updatePriceWithPromo();
+    } else {
+      appliedPromo = null;
+      result.innerHTML='<span style="color:#e05555">❌ Invalid promo code. Please check and try again.</span>';
+      updatePriceWithPromo();
+    }
+  }catch(e){
+    result.innerHTML='<span style="color:#e05555">Error checking code.</span>';
+  }
+});
+
+// Also clear promo if input cleared
+document.getElementById('promo-input').addEventListener('input', function(){
+  if(!this.value.trim()){ appliedPromo=null; document.getElementById('promo-result').textContent=''; updatePriceWithPromo(); }
+  this.value = this.value.toUpperCase();
+});
+
+function updatePriceWithPromo(){
+  const pd = document.getElementById('price-display');
+  if(!pd || !pd.dataset.basePrice) return;
+  const base = parseInt(pd.dataset.basePrice);
+  const tickets = parseInt(document.getElementById('bk-tickets').value)||1;
+
+  if(appliedPromo){
+    const disc = appliedPromo.discount;
+    const discAmt = Math.round(base * disc / 100);
+    const discounted = base - discAmt;
+    const totalOriginal = base * tickets;
+    const totalDiscounted = discounted * tickets;
+    const totalSaving = discAmt * tickets;
+    pd.innerHTML =
+      '<div style="border-radius:14px;overflow:hidden;border:1px solid rgba(74,222,128,0.3)">' +
+        '<div style="background:rgba(74,222,128,0.08);padding:12px 20px;text-align:center;border-bottom:1px solid rgba(74,222,128,0.2)">' +
+          '<span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#4ade80;font-weight:600">🎟 Promo Code Applied: ' + esc(appliedPromo.code) + '</span>' +
+        '</div>' +
+        '<div style="background:#0f0f18;padding:20px">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bdr)">' +
+            '<span style="font-size:13px;color:var(--muted)">Original Price (per person)</span>' +
+            '<span style="font-size:16px;text-decoration:line-through;color:var(--muted)">NPR ' + base.toLocaleString() + '</span>' +
+          '</div>' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bdr)">' +
+            '<span style="font-size:13px;color:#e05555">Discount (' + disc + '%) &nbsp; NPR ' + base.toLocaleString() + ' × ' + disc + ' ÷ 100</span>' +
+            '<span style="font-size:16px;color:#e05555;font-weight:600">− NPR ' + discAmt.toLocaleString() + '</span>' +
+          '</div>' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bdr)">' +
+            '<span style="font-size:13px;color:var(--txt);font-weight:600">Discounted Price (per person)</span>' +
+            '<span style="font-size:22px;font-weight:700;color:#4ade80">NPR ' + discounted.toLocaleString() + '</span>' +
+          '</div>' +
+          '<div style="font-size:12px;color:var(--muted);text-align:center;padding:8px 0;border-bottom:1px solid var(--bdr)">' +
+            'NPR ' + base.toLocaleString() + ' − NPR ' + discAmt.toLocaleString() + ' = <b style=\"color:#4ade80\">NPR ' + discounted.toLocaleString() + '</b>' +
+          '</div>' +
+          (tickets > 1 ?
+            '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bdr)">' +
+              '<span style="font-size:13px;color:var(--muted)">' + tickets + ' Tickets × NPR ' + discounted.toLocaleString() + '</span>' +
+              '<span style="font-size:16px;color:var(--txt)">NPR ' + totalDiscounted.toLocaleString() + '</span>' +
+            '</div>' : '') +
+          '<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0 4px">' +
+            '<span style="font-size:14px;font-weight:700;color:var(--txt)">Total Amount to Pay</span>' +
+            '<span style="font-size:28px;font-weight:700;font-family:Cormorant Garamond,serif;color:#4ade80">NPR ' + totalDiscounted.toLocaleString() + '</span>' +
+          '</div>' +
+          '<div style="text-align:right;font-size:13px;color:#4ade80">🎉 You save NPR ' + totalSaving.toLocaleString() + '!</div>' +
+          '<div style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center">✈ ' + esc(bkFrom) + ' → ' + esc(bkTo) + ' · ' + esc(curAl ? curAl.name : '') + '</div>' +
+        '</div>' +
+      '</div>';
+  } else {
+    const total = base * tickets;
+    pd.innerHTML =
+      '<div style="background:rgba(26,79,168,0.08);border:1px solid rgba(26,79,168,0.3);border-radius:14px;padding:20px;text-align:center">' +
+        '<div style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Fare Per Person</div>' +
+        '<div style="font-size:48px;font-weight:700;font-family:Cormorant Garamond,serif;color:var(--gold);margin-bottom:6px">NPR ' + base.toLocaleString() + '</div>' +
+        (tickets > 1 ?
+          '<div style="border-top:1px solid var(--bdr);margin-top:12px;padding-top:12px">' +
+            '<div style="font-size:13px;color:var(--muted);margin-bottom:4px">' + tickets + ' tickets × NPR ' + base.toLocaleString() + '</div>' +
+            '<div style="font-size:22px;font-weight:700;color:#4ade80">Total: NPR ' + total.toLocaleString() + '</div>' +
+          '</div>' : '') +
+        '<div style="font-size:12px;color:var(--muted);margin-top:12px">✈ ' + esc(bkFrom) + ' → ' + esc(bkTo) + ' · ' + esc(curAl ? curAl.name : '') + '</div>' +
+      '</div>';
+  }
+}
+
+// ===== ADMIN PROMO CODES =====
+let promoListenersAdded = false;
+
+function initPromoTab(){
+  loadPromoList();
+  if(promoListenersAdded) return;
+  promoListenersAdded = true;
+
+  document.getElementById('pc-code').addEventListener('input',function(){
+    this.value=this.value.toUpperCase();
+  });
+
+  document.getElementById('pc-add-btn').addEventListener('click', async function(){
+    const name = document.getElementById('pc-name').value.trim();
+    const age  = document.getElementById('pc-age').value.trim();
+    const social = document.getElementById('pc-social').value.trim();
+    const code = document.getElementById('pc-code').value.trim().toUpperCase();
+    const discount = parseInt(document.getElementById('pc-discount').value)||5;
+    if(!name||!code){toast('Please enter affiliate name and promo code.','bad');return;}
+    try{
+      const snap = await getDocs(collection(db,'promocodes'));
+      let exists = false;
+      snap.forEach(d=>{ if(d.data().code&&d.data().code.toUpperCase()===code) exists=true; });
+      if(exists){toast('This promo code already exists!','bad');return;}
+      await addDoc(collection(db,'promocodes'),{
+        name,age,social,code,discount,
+        uses:[],totalUses:0,
+        created:new Date().toISOString()
+      });
+      document.getElementById('pc-name').value='';
+      document.getElementById('pc-age').value='';
+      document.getElementById('pc-social').value='';
+      document.getElementById('pc-code').value='';
+      document.getElementById('pc-discount').value='5';
+      const ok=document.getElementById('pc-ok');
+      ok.style.display='block';
+      setTimeout(()=>ok.style.display='none',3000);
+      toast('Promo code added!','ok');
+      loadPromoList();
+    }catch(e){toast('Error: '+e.message,'bad');}
+  });
+}
+
+async function loadPromoList(){
+  const c=document.getElementById('promo-list');
+  c.innerHTML='<p style="color:var(--muted);font-size:13px;padding:8px 0">Loading promo codes...</p>';
+  try{
+    const snap=await getDocs(collection(db,'promocodes'));
+    if(snap.empty){
+      c.innerHTML='<p style="color:var(--muted);font-size:13px">No promo codes yet. Add one above.</p>';
+      return;
+    }
+    c.innerHTML='';
+    snap.forEach(d=>{
+      const p={id:d.id,...d.data()};
+      const uses=p.uses||[];
+      const div=document.createElement('div');
+      div.className='promo-card';
+      div.innerHTML=`
+        <div class="promo-card-hd">
+          <div>
+            <div class="promo-nm">${esc(p.name)} <span style="font-size:11px;color:var(--muted);font-weight:400">Age: ${esc(String(p.age||''))}</span></div>
+            ${p.social?`<a href="${esc(p.social)}" target="_blank" style="font-size:12px;color:#7ab0f0;text-decoration:none">🔗 ${esc(p.social)}</a>`:''}
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+            <span class="promo-code-badge">${esc(p.code)}</span>
+            <span style="background:rgba(26,79,168,0.1);border:1px solid rgba(26,79,168,0.3);color:#7ab0f0;font-size:12px;padding:4px 10px;border-radius:8px">${p.discount||5}% OFF</span>
+          </div>
+        </div>
+        <div class="promo-meta">
+          📅 Created: ${fmt(p.created)} &nbsp;|&nbsp;
+          🎟 Total uses: <b style="color:#4ade80">${uses.length}</b>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center">
+          <input type="number" class="ai disc-inp" value="${p.discount||5}" min="1" max="100" style="width:70px;padding:7px 10px" placeholder="%"/>
+          <span style="font-size:12px;color:var(--muted)">%</span>
+          <button class="abtn upd-disc" style="font-size:12px;padding:8px 14px">Update Discount</button>
+          <button class="abtn rd sm del-promo" style="font-size:12px;padding:8px 14px">🗑 Delete</button>
+        </div>
+        ${uses.length>0?`
+        <div class="promo-uses" style="margin-top:12px">
+          <div class="promo-uses-title">👥 ${uses.length} customer(s) used this code — Total discount given: NPR ${uses.reduce((sum,u)=>sum+(u.discountAmount||0),0).toLocaleString()}</div>
+          <div style="display:grid;grid-template-columns:1fr;gap:6px;margin-top:8px">
+          ${uses.map((u,i)=>`
+            <div style="background:#13131a;border:1px solid var(--bdr);border-radius:8px;padding:10px 14px;font-size:12px">
+              <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:4px">
+                <span style="font-weight:600;color:#f0ede8">👤 ${esc(u.customerName||'')} &nbsp;·&nbsp; 📱 ${esc(u.phone||'')}</span>
+                <span style="background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.25);color:#4ade80;padding:2px 10px;border-radius:6px;font-weight:600">-NPR ${(u.discountAmount||0).toLocaleString()} saved</span>
+              </div>
+              <div style="color:var(--muted)">✈ ${esc(u.route||'')} &nbsp;·&nbsp; 📅 ${esc(u.date||'')} &nbsp;·&nbsp; 🎫 ${esc(String(u.tickets||1))} ticket(s) &nbsp;·&nbsp; ${esc(String(u.discount||0))}% off</div>
+            </div>`).join('')}
+          </div>
+        </div>`:'<div style="font-size:12px;color:var(--muted);margin-top:8px;padding:8px 0">No one has used this promo code yet.</div>'}`;
+
+      div.querySelector('.upd-disc').addEventListener('click',async function(){
+        const newDisc=parseInt(div.querySelector('.disc-inp').value)||5;
+        try{
+          await updateDoc(doc(db,'promocodes',p.id),{discount:newDisc});
+          toast('Discount updated to '+newDisc+'%!','ok');
+          loadPromoList();
+        }catch(e){toast('Error: '+e.message,'bad');}
+      });
+
+      div.querySelector('.del-promo').addEventListener('click',async function(){
+        if(!confirm('Delete promo code "'+p.code+'"? This cannot be undone.'))return;
+        try{
+          await deleteDoc(doc(db,'promocodes',p.id));
+          toast('Promo code deleted.','ok');
+          loadPromoList();
+        }catch(e){toast('Error: '+e.message,'bad');}
+      });
+
+      c.appendChild(div);
+    });
+  }catch(e){
+    c.innerHTML='<p style="color:#e05555;font-size:13px">Error loading promo codes: '+e.message+'</p>';
+  }
+}
+
+// ===== FLIGHT TIMES ADMIN
+document.getElementById('ft-airline').addEventListener('change',function(){
+  const al=airlines.find(a=>a.id===this.value);
+  const rs=document.getElementById('ft-route');
+  rs.innerHTML='<option value="">Select route</option>';
+  if(!al)return;
+  const routes=al.routes||[];
+  routes.forEach(from=>{
+    routes.forEach(to=>{
+      if(from!==to){
+        const o=document.createElement('option');
+        o.value=al.id+'_'+from.replace(/ /g,'')+'_'+to.replace(/ /g,'');
+        o.textContent=from+' → '+to;
+        rs.appendChild(o);
+      }
+    });
+  });
+});
+
+document.getElementById('ft-route').addEventListener('change',async function(){
+  if(!this.value)return;
+  try{
+    const d=await getDoc(doc(db,'flighttimes',this.value));
+    if(d.exists&&d.data().times){
+      document.getElementById('ft-times').value=d.data().times.join(', ');
+    }else{
+      document.getElementById('ft-times').value='';
+    }
+  }catch(e){}
+});
+
+document.getElementById('ft-save').addEventListener('click',async()=>{
+  const key=document.getElementById('ft-route').value;
+  const raw=document.getElementById('ft-times').value.trim();
+  if(!key){toast('Please select airline and route.','bad');return;}
+  if(!raw){toast('Please enter at least one time.','bad');return;}
+  const times=raw.split(',').map(t=>t.trim()).filter(t=>t);
+  try{
+    const alId=document.getElementById('ft-airline').value;
+    const routeLabel=document.getElementById('ft-route').options[document.getElementById('ft-route').selectedIndex].text;
+    const alLabel=document.getElementById('ft-airline').options[document.getElementById('ft-airline').selectedIndex].text;
+    await setDoc(doc(db,'flighttimes',key),{times,airline:alId,airlineName:alLabel,routeLabel,updated:new Date().toISOString()});
+    const ok=document.getElementById('ft-ok');ok.style.display='block';setTimeout(()=>ok.style.display='none',3000);
+    toast('Flight times saved!','ok');
+    loadSavedTimes();
+  }catch(e){toast('Error: '+e.message,'bad');}
+});
+
+async function loadSavedTimes(){
+  const c=document.getElementById('ft-saved-list');
+  if(!c)return;
+  c.innerHTML='<p style="color:var(--muted);font-size:13px">Loading saved times...</p>';
+  try{
+    const snap=await getDocs(collection(db,'flighttimes'));
+    if(snap.empty){c.innerHTML='<p style="color:var(--muted);font-size:13px">No flight times set yet.</p>';return;}
+    c.innerHTML='<div class="acard-t" style="margin-bottom:12px">All Saved Flight Times</div>';
+    snap.forEach(d=>{
+      const x=d.data();
+      const div=document.createElement('div');
+      div.style.cssText='display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#0f0f18;border:1px solid var(--bdr);border-radius:8px;margin-bottom:8px;flex-wrap:wrap;gap:8px;';
+      div.innerHTML=`
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--txt)">${esc(x.airlineName||'')} · ${esc(x.routeLabel||d.id)}</div>
+          <div style="font-size:12px;color:var(--gold);margin-top:3px">${(x.times||[]).join(' · ')}</div>
+        </div>
+        <button class="abtn rd sm del-ft" data-key="${esc(d.id)}">Delete</button>`;
+      div.querySelector('.del-ft').addEventListener('click',async function(){
+        if(!confirm('Delete times for this route?'))return;
+        try{await deleteDoc(doc(db,'flighttimes',this.dataset.key));toast('Deleted.','ok');loadSavedTimes();}
+        catch(e){toast('Error.','bad');}
+      });
+      c.appendChild(div);
+    });
+  }catch(e){c.innerHTML='<p style="color:#e05555">Error loading.</p>';}
+}
+
+function initFlightTimesAdmin(){
+  const sel=document.getElementById('ft-airline');
+  sel.innerHTML='<option value="">Select airline</option>';
+  airlines.forEach(a=>sel.innerHTML+=`<option value="${esc(a.id)}">${esc(a.name)}</option>`);
+  loadSavedTimes();
+}
+
+// MISC
+document.getElementById('go-top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+document.getElementById('hero-book').addEventListener('click',()=>document.getElementById('al-sec').scrollIntoView({behavior:'smooth'}));
+
+// INIT
+ldr(true,'Loading...');
+loadAirlines().then(()=>ldr(false)).catch(()=>ldr(false));
+
+</script>
+
+<!-- ABOUT & PRIVACY OVERLAY PAGES -->
+<style>
+.page-overlay{display:none;position:fixed;inset:0;background:var(--bg);z-index:500;overflow-y:auto;}
+.page-overlay.on{display:block;}
+.po-header{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(10,10,15,0.97);border-bottom:1px solid var(--bdr);position:sticky;top:0;backdrop-filter:blur(20px);}
+.po-logo{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;}
+.po-logo b{color:var(--gold);}
+.po-back{background:none;border:1px solid var(--bdr);color:var(--muted);padding:8px 18px;border-radius:8px;font-size:12px;cursor:pointer;font-family:"Inter",sans-serif;transition:all .2s;}
+.po-back:hover{border-color:#3a5faa;color:var(--txt);}
+.po-content{max-width:780px;margin:0 auto;padding:48px 32px;}
+.about-hero-card{display:flex;gap:28px;align-items:flex-start;background:#13131a;border:1px solid var(--bdr);border-radius:16px;padding:28px;margin-bottom:24px;}
+.about-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);flex-shrink:0;}
+.about-name{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;margin-bottom:4px;}
+.about-role{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.08em;margin-bottom:12px;}
+.about-contact{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:4px;}
+.about-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.about-badge{background:rgba(26,79,168,.15);border:1px solid rgba(26,79,168,.3);color:#7ab0f0;font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;}
+.about-sec{background:#13131a;border:1px solid var(--bdr);border-radius:14px;padding:24px;margin-bottom:18px;}
+.about-sec-lbl{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.about-desc{font-size:15px;color:rgba(240,237,230,.75);line-height:1.8;font-weight:300;}
+.about-services{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px;}
+.about-scard{background:#0f0f18;border:1px solid var(--bdr);border-radius:10px;padding:16px;text-align:center;}
+.about-scard-ico{font-size:26px;margin-bottom:8px;}
+.about-scard p{font-size:12px;color:var(--muted);line-height:1.6;font-weight:300;}
+.wa-chip{display:inline-flex;align-items:center;gap:8px;background:#075E54;color:#fff;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:600;margin-top:4px;}
+.email-chip{display:inline-flex;align-items:center;gap:8px;background:#13131a;border:1px solid var(--bdr);border-radius:20px;padding:8px 16px;font-size:13px;color:var(--muted);margin-top:10px;}
+.pp-title{font-family:"Cormorant Garamond",serif;font-size:36px;font-weight:700;margin-bottom:6px;}
+.pp-title span{color:var(--gold);}
+.pp-meta{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.pp-meta a{color:var(--gold);text-decoration:none;}
+.pp-highlight{background:rgba(26,79,168,.08);border-left:3px solid #1a4fa8;border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:28px;font-size:14px;color:rgba(240,237,230,.75);line-height:1.8;}
+.pp-sec{background:#13131a;border:1px solid var(--bdr);border-radius:12px;padding:22px;margin-bottom:14px;}
+.pp-sec h2{font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:700;margin-bottom:10px;color:var(--txt);}
+.pp-sec p,.pp-sec li{font-size:14px;color:rgba(240,237,230,.65);line-height:1.8;font-weight:300;}
+.pp-sec ul{padding-left:20px;margin-top:8px;}
+.pp-sec ul li{margin-bottom:6px;}
+.pp-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;color:var(--gold);text-decoration:none;font-weight:600;}
+@media(max-width:768px){
+  .po-header{padding:12px 18px;}
+  .po-content{padding:24px 18px;}
+  .about-hero-card{flex-direction:column;align-items:center;text-align:center;}
+  .about-services{grid-template-columns:1fr;}
+}
+</style>
+
+<!-- ABOUT PAGE -->
+<div class="page-overlay" id="page-about">
+  <div class="po-header">
+    <div class="po-logo">Air Taxi <b>Nepal</b></div>
+    <button class="po-back" onclick="closeInfoPage()">&#8592; Back to Home</button>
+  </div>
+  <div class="po-content">
+    <div class="about-hero-card">
+      <img class="about-photo" src="data:image/jpeg;base64,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" alt="Kushal Rayamajhi"/>
+      <div>
+        <div class="about-name">Kushal Rayamajhi</div>
+        <div class="about-role">&#9992;&#65039; Founder &amp; CEO &#8212; Air Taxi Nepal</div>
+        <div class="about-contact">&#128231; backoffice.airtaxinepal@gmail.com</div>
+        <div class="about-contact">&#127760; www.airtaxinepal.org</div>
+        <div class="about-badge-row">
+          <span class="about-badge">Buddha Air</span>
+          <span class="about-badge">Yeti Airlines</span>
+          <span class="about-badge">Shree Airlines</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-sec">
+      <div class="about-sec-lbl">Our Story</div>
+      <p class="about-desc"><b style="color:var(--txt)">Air Taxi Nepal</b> was founded by Kushal Rayamajhi with one simple goal &#8212; to make domestic air travel affordable and accessible for every Nepali traveller. Finding the cheapest flights used to be time-consuming and confusing. We changed that by building a simple, fast, and reliable platform where you can book seats on <b style="color:var(--txt)">Buddha Air</b>, <b style="color:var(--txt)">Yeti Airlines</b>, and <b style="color:var(--txt)">Shree Airlines</b> in just a few clicks.</p>
+      <p class="about-desc" style="margin-top:12px">We serve customers from all across Nepal &#8212; whether you are travelling for work, family, or adventure. Air Taxi Nepal gets you there at the best price.</p>
+    </div>
+    <div class="about-sec">
+      <div class="about-sec-lbl">What We Offer</div>
+      <div class="about-services">
+        <div class="about-scard"><div class="about-scard-ico">&#127915;</div><p>Easy flight booking in just a few clicks</p></div>
+        <div class="about-scard"><div class="about-scard-ico">&#128184;</div><p>Best prices on all domestic routes</p></div>
+        <div class="about-scard"><div class="about-scard-ico">&#128172;</div><p>24/7 WhatsApp support every step of the way</p></div>
+      </div>
+    </div>
+    <div class="about-sec">
+      <div class="about-sec-lbl">Get In Touch</div>
+      <div class="wa-chip">&#128172; Available 24/7 on WhatsApp</div><br>
+      <span class="email-chip">&#128231; backoffice.airtaxinepal@gmail.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY PAGE -->
+<div class="page-overlay" id="page-privacy">
+  <div class="po-header">
+    <div class="po-logo">Air Taxi <b>Nepal</b></div>
+    <button class="po-back" onclick="closeInfoPage()">&#8592; Back to Home</button>
+  </div>
+  <div class="po-content">
+    <h1 class="pp-title">&#128737;&#65039; Privacy <span>Policy</span></h1>
+    <p class="pp-meta">Air Taxi Nepal Pvt Ltd &middot; Kathmandu, Nepal &middot; Last updated: June 7, 2026 &middot; <a href="https://www.termsfeed.com/live/35811a3c-8d3b-4418-9246-3ebf2000e7c3" target="_blank">View full policy &#8599;</a></p>
+    <div class="pp-highlight">Air Taxi Nepal is committed to protecting your privacy. This policy explains how we collect, use, and safeguard your personal information when you use our services at <b>www.airtaxinepal.org</b>.</div>
+    <div class="pp-sec"><h2>Information We Collect</h2><p>When you use our service, we may collect:</p><ul><li>Email address, first and last name, phone number</li><li>Usage data &#8212; IP address, browser type, pages visited, and time spent</li><li>Device identifiers and mobile operating system information</li></ul></div>
+    <div class="pp-sec"><h2>How We Use Your Information</h2><ul><li>Provide and maintain our flight booking service</li><li>Manage your account and process bookings</li><li>Contact you about updates, offers, and support</li><li>Improve our platform through analytics and usage trends</li></ul></div>
+    <div class="pp-sec"><h2>Cookies</h2><p>We use session and persistent cookies to authenticate users, remember your preferences, and analyze how our service is used. You may disable cookies in your browser settings, though some features may be affected.</p></div>
+    <div class="pp-sec"><h2>Data Retention</h2><p>We retain personal data only as long as necessary. Account information is kept for up to 24 months after account closure. Usage and analytics data is retained for up to 24 months from collection.</p></div>
+    <div class="pp-sec"><h2>Your Rights</h2><p>You have the right to access, correct, or delete your personal data at any time. Contact us directly to make a request.</p></div>
+    <div class="pp-sec"><h2>Children's Privacy</h2><p>Our service is not directed at anyone under the age of 16. We do not knowingly collect personal data from minors.</p></div>
+    <div class="pp-sec"><h2>Contact Us</h2><p>For any questions about this Privacy Policy:</p><span class="email-chip">&#128231; backoffice.airtaxinepal@gmail.com</span><br><a class="pp-link" href="https://www.termsfeed.com/live/35811a3c-8d3b-4418-9246-3ebf2000e7c3" target="_blank">&#128279; Read full privacy policy</a></div>
+  </div>
+</div>
+
+<script>
+function openInfoPage(p){
+  document.getElementById('page-'+p).classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeInfoPage(){
+  document.querySelectorAll('.page-overlay').forEach(el=>el.classList.remove('on'));
+  document.body.style.overflow='';
+}
+</script>
+
+</body>
+</html>

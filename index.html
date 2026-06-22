@@ -3,47 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Air Taxi Nepal - Launching Soon</title>
+<title>Air Taxi Nepal - 50 Day Countdown</title>
 <style>
-body{margin:0;background:#020617;color:white;font-family:Arial,sans-serif;overflow:hidden;display:flex;justify-content:center;align-items:center;height:100vh}
-canvas{position:fixed;inset:0}
-.card{position:relative;z-index:2;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);padding:40px;border-radius:24px;text-align:center;max-width:800px;width:90%}
-h1{font-size:4rem;margin:0;background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.count{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.box{background:rgba(255,255,255,.08);padding:12px 18px;border-radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#020617;color:#fff;height:100vh;overflow:hidden;display:flex;justify-content:center;align-items:center}
+#galaxy{position:fixed;inset:0}
+.card{position:relative;z-index:2;width:90%;max-width:850px;padding:40px;border-radius:28px;background:rgba(255,255,255,.08);backdrop-filter:blur(14px);text-align:center}
+h1{font-size:4rem}
+h2{color:#facc15;margin:10px 0 20px}
+.count{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0}
+.box{background:rgba(255,255,255,.08);padding:14px 20px;border-radius:14px}
 .num{font-size:2rem;font-weight:bold;color:#60a5fa}
 </style>
 </head>
 <body>
-<canvas id="c"></canvas>
+<canvas id="galaxy"></canvas>
 <div class="card">
-<h1>Air Taxi Nepal</h1>
+<h1>✈ Air Taxi Nepal</h1>
 <h2>Launching Soon</h2>
 <p>Our new flight booking platform is preparing for takeoff.</p>
 <div class="count">
-<div class="box"><div id="d" class="num">40</div>Days</div>
-<div class="box"><div id="h" class="num">00</div>Hours</div>
-<div class="box"><div id="m" class="num">00</div>Minutes</div>
-<div class="box"><div id="s" class="num">00</div>Seconds</div>
+<div class="box"><div id="days" class="num">50</div>Days</div>
+<div class="box"><div id="hours" class="num">00</div>Hours</div>
+<div class="box"><div id="minutes" class="num">00</div>Minutes</div>
+<div class="box"><div id="seconds" class="num">00</div>Seconds</div>
 </div>
 <p>📞 +977 9713601159<br>🌐 www.airtaxinepal.org</p>
 </div>
 <script>
-const launch=new Date();launch.setDate(launch.getDate()+40);
-setInterval(()=>{
-const n=new Date(),x=launch-n;
-document.getElementById('d').textContent=Math.floor(x/86400000);
-document.getElementById('h').textContent=Math.floor(x%86400000/3600000);
-document.getElementById('m').textContent=Math.floor(x%3600000/60000);
-document.getElementById('s').textContent=Math.floor(x%60000/1000);
-},1000);
-const c=document.getElementById('c'),ctx=c.getContext('2d');
-function r(){c.width=innerWidth;c.height=innerHeight}r();onresize=r;
-const stars=[...Array(700)].map(()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,s:Math.random()*2+0.2,v:Math.random()+0.2}));
+const launchDate = new Date("August 11, 2026 00:00:00").getTime();
+function updateCountdown(){
+ const now = new Date().getTime();
+ const distance = launchDate - now;
+ document.getElementById('days').textContent=Math.max(0,Math.floor(distance/86400000));
+ document.getElementById('hours').textContent=Math.max(0,Math.floor((distance%86400000)/3600000));
+ document.getElementById('minutes').textContent=Math.max(0,Math.floor((distance%3600000)/60000));
+ document.getElementById('seconds').textContent=Math.max(0,Math.floor((distance%60000)/1000));
+}
+setInterval(updateCountdown,1000); updateCountdown();
+
+const c=document.getElementById('galaxy'),ctx=c.getContext('2d');
+function resize(){c.width=innerWidth;c.height=innerHeight;} resize(); addEventListener('resize',resize);
+const stars=[...Array(700)].map(()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,s:Math.random()*2,v:Math.random()+0.2}));
 (function a(){
-ctx.fillStyle='#020617';ctx.fillRect(0,0,c.width,c.height);
-stars.forEach(st=>{ctx.fillStyle='white';ctx.fillRect(st.x,st.y,st.s,st.s);st.y+=st.v;if(st.y>c.height){st.y=0;st.x=Math.random()*c.width;}});
-requestAnimationFrame(a);
+ ctx.fillStyle='#020617'; ctx.fillRect(0,0,c.width,c.height);
+ stars.forEach(st=>{ctx.fillStyle='white';ctx.fillRect(st.x,st.y,st.s,st.s);st.y+=st.v;if(st.y>c.height){st.y=0;st.x=Math.random()*c.width;}});
+ requestAnimationFrame(a);
 })();
 </script>
 </body>
